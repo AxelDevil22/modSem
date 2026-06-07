@@ -99,11 +99,6 @@
     
 
 
-    <!-- internal:anonymous-constants -->
-
-    <rdfs:Datatype rdf:about="internal:anonymous-constants"/>
-    
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -1269,7 +1264,6 @@
         <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
         <vgaccess:sviluppatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ExtremelyOKGames"/>
         <vgaccess:haAnnoPubblicazione rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2018</vgaccess:haAnnoPubblicazione>
-        <vgaccess:haAnnoPubblicazione rdf:datatype="internal:anonymous-constants">2018</vgaccess:haAnnoPubblicazione>
         <vgaccess:haDescrizioneBreve xml:lang="it">Videogioco usato come esempio per rappresentare funzionalita di assistenza, personalizzazione della difficolta e semplificazione dei controlli.</vgaccess:haDescrizioneBreve>
         <vgaccess:haPunteggioAccessibilita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</vgaccess:haPunteggioAccessibilita>
         <vgaccess:haTitoloPrincipale>Celeste</vgaccess:haTitoloPrincipale>
@@ -1516,7 +1510,6 @@
         <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
         <vgaccess:sviluppatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NaughtyDog"/>
         <vgaccess:haAnnoPubblicazione rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2020</vgaccess:haAnnoPubblicazione>
-        <vgaccess:haAnnoPubblicazione rdf:datatype="internal:anonymous-constants">2020</vgaccess:haAnnoPubblicazione>
         <vgaccess:haDescrizioneBreve xml:lang="it">Videogioco usato come esempio per rappresentare un insieme ampio di funzionalita di accessibilita.</vgaccess:haDescrizioneBreve>
         <vgaccess:haPunteggioAccessibilita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</vgaccess:haPunteggioAccessibilita>
         <vgaccess:haTitoloPrincipale>The Last of Us Part II</vgaccess:haTitoloPrincipale>

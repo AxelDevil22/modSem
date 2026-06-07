@@ -64,9 +64,6 @@ xsd:date rdf:type rdfs:Datatype .
 xsd:gYear rdf:type rdfs:Datatype .
 
 
-###  internal:anonymous-constants
-<internal:anonymous-constants> rdf:type rdfs:Datatype .
-
 
 #################################################################
 #    Object Properties
@@ -1015,8 +1012,7 @@ vgaccess:Celeste rdf:type owl:NamedIndividual ,
                  vgaccess:supportaEsigenzaGiocatore vgaccess:GestioneCaricoCognitivo ,
                                                     vgaccess:RiduzioneBarriereMotorie ;
                  vgaccess:sviluppatoDa vgaccess:ExtremelyOKGames ;
-                 vgaccess:haAnnoPubblicazione "2018"^^xsd:gYear ,
-                                              "2018"^^<internal:anonymous-constants> ;
+                 vgaccess:haAnnoPubblicazione "2018"^^xsd:gYear;
                  vgaccess:haDescrizioneBreve "Videogioco usato come esempio per rappresentare funzionalita di assistenza, personalizzazione della difficolta e semplificazione dei controlli."@it ;
                  vgaccess:haPunteggioAccessibilita 4 ;
                  vgaccess:haTitoloPrincipale "Celeste" ;
@@ -1205,8 +1201,7 @@ vgaccess:TheLastOfUsPartII rdf:type owl:NamedIndividual ,
                                                               vgaccess:PercezioneElementiVisivi ,
                                                               vgaccess:RiduzioneBarriereMotorie ;
                            vgaccess:sviluppatoDa vgaccess:NaughtyDog ;
-                           vgaccess:haAnnoPubblicazione "2020"^^xsd:gYear ,
-                                                        "2020"^^<internal:anonymous-constants> ;
+                           vgaccess:haAnnoPubblicazione "2020"^^xsd:gYear;
                            vgaccess:haDescrizioneBreve "Videogioco usato come esempio per rappresentare un insieme ampio di funzionalita di accessibilita."@it ;
                            vgaccess:haPunteggioAccessibilita 5 ;
                            vgaccess:haTitoloPrincipale "The Last of Us Part II" ;

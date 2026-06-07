@@ -1,0 +1,1616 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#"
+     xml:base="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:vgaccess="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess">
+        <dc:creator xml:lang="it">Alex Agliuzza</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-24</dc:date>
+        <dc:description xml:lang="it">Ontologia per descrivere videogiochi in relazione alle funzionalita di accessibilita offerte, alle esigenze dei giocatori e ai profili utente supportati.</dc:description>
+        <dc:title xml:lang="it">VGAccess: ontologia per la rappresentazione dell&apos;accessibilita nei videogiochi</dc:title>
+        <vann:preferredNamespacePrefix>vgaccess</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>&lt;http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#&gt;</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="it">Ontologia sviluppata come progetto di modellazione concettuale per il Web Semantico.</rdfs:comment>
+        <rdfs:label xml:lang="it">VGAccess</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- internal:anonymous-constants -->
+
+    <rdfs:Datatype rdf:about="internal:anonymous-constants"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#adattoAProfilo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#adattoAProfilo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <rdfs:comment xml:lang="it">Collega un videogioco a un profilo giocatore per cui il gioco puo essere considerato adatto.</rdfs:comment>
+        <rdfs:label xml:lang="it">adatto a profilo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#disponibileSu -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#disponibileSu">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <rdfs:comment xml:lang="it">Collega un videogioco alla piattaforma su cui e disponibile.</rdfs:comment>
+        <rdfs:label xml:lang="it">disponibile su</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#eFunzionalitaDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#eFunzionalitaDi">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:comment xml:lang="it">Collega una funzionalita di accessibilita al videogioco in cui e presente.</rdfs:comment>
+        <rdfs:label xml:lang="it">e funzionalita di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haEsigenzaAccessibilita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haEsigenzaAccessibilita">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <rdfs:comment xml:lang="it">Collega un profilo giocatore a una sua esigenza di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">ha esigenza di accessibilita</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdfs:comment xml:lang="it">Collega un videogioco a una funzionalita di accessibilita presente nel gioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">ha funzionalita di accessibilita</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haLivelloAccessibilita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haLivelloAccessibilita">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <rdfs:comment xml:lang="it">Collega un videogioco a un unico livello sintetico di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">ha livello di accessibilita</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#piuSpecificoDi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#piuSpecificoDi">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdfs:comment xml:lang="it">Relazione transitiva usata per rappresentare gerarchie concettuali tra funzionalita o bisogni.</rdfs:comment>
+        <rdfs:label xml:lang="it">piu specifico di</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#pubblicatoDa -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#pubblicatoDa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Publisher"/>
+        <rdfs:comment xml:lang="it">Collega un videogioco al suo publisher.</rdfs:comment>
+        <rdfs:label xml:lang="it">pubblicato da</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#supportaEsigenza -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#supportaEsigenza">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <rdfs:comment xml:lang="it">Collega una funzionalita di accessibilita all&apos;esigenza del giocatore che essa supporta.</rdfs:comment>
+        <rdfs:label xml:lang="it">supporta esigenza</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#supportaEsigenzaGiocatore -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#supportaEsigenzaGiocatore">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#supportaEsigenza"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="it">Collega un videogioco a un&apos;esigenza del giocatore inferita tramite le sue funzionalita di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">supporta esigenza del giocatore</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#sviluppatoDa -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#sviluppatoDa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sviluppatore"/>
+        <rdfs:comment xml:lang="it">Collega un videogioco al suo sviluppatore.</rdfs:comment>
+        <rdfs:label xml:lang="it">sviluppato da</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haAnnoPubblicazione -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haAnnoPubblicazione">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:comment xml:lang="it">Anno di pubblicazione del videogioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">ha anno di pubblicazione</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haDescrizioneBreve -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haDescrizioneBreve">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+        <rdfs:comment xml:lang="it">Breve descrizione testuale del videogioco o delle sue caratteristiche rilevanti.</rdfs:comment>
+        <rdfs:label xml:lang="it">ha descrizione breve</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haPunteggioAccessibilita -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haPunteggioAccessibilita">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="it">Valore numerico sintetico usato per indicare il livello di accessibilita del videogioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">ha punteggio di accessibilita</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haTitoloPrincipale -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haTitoloPrincipale">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="it">Titolo principale del videogioco, espresso come stringa.</rdfs:comment>
+        <rdfs:label xml:lang="it">ha titolo principale</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrasto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrasto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistMode"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che aumenta il contrasto visivo tra elementi di gioco, interfaccia e sfondo.</rdfs:comment>
+        <rdfs:label xml:lang="it">Alto contrasto</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistMode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistMode">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Modalita di assistenza che modifica alcune regole o parametri di gioco per ridurre barriere di interazione.</rdfs:comment>
+        <rdfs:label xml:lang="it">Assist mode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificati -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificati">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che riduce la complessita o la precisione richiesta per l&apos;interazione motoria.</rdfs:comment>
+        <rdfs:label xml:lang="it">Controlli semplificati</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che consente di modificare parametri della difficolta per adattare l&apos;esperienza alle esigenze del giocatore.</rdfs:comment>
+        <rdfs:label xml:lang="it">Difficolta personalizzabile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Necessita o requisito del giocatore a cui una funzionalita di accessibilita puo rispondere.</rdfs:comment>
+        <rdfs:label xml:lang="it">Esigenza di accessibilita</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaCognitiva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaCognitiva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Esigenza legata alla comprensione, alla memoria, all&apos;attenzione o alla gestione della complessita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Esigenza cognitiva</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Esigenza legata all&apos;interazione fisica con controlli, periferiche o azioni di gioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Esigenza motoria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Esigenza legata alla fruizione di suoni, dialoghi e feedback audio.</rdfs:comment>
+        <rdfs:label xml:lang="it">Esigenza uditiva</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Esigenza legata alla percezione visiva dei contenuti di gioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Esigenza visiva</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Caratteristica o opzione progettata per ridurre barriere di accesso e migliorare la fruizione del videogioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Funzionalita di accessibilita</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita di accessibilita relativa alla comprensione, all&apos;orientamento e alla gestione del carico cognitivo.</rdfs:comment>
+        <rdfs:label xml:lang="it">Funzionalita cognitiva</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita di accessibilita relativa all&apos;interazione fisica con il sistema di gioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Funzionalita motoria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita di accessibilita relativa alla fruizione dei contenuti sonori o dialogici.</rdfs:comment>
+        <rdfs:label xml:lang="it">Funzionalita uditiva</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita di accessibilita relativa alla percezione visiva dei contenuti.</rdfs:comment>
+        <rdfs:label xml:lang="it">Funzionalita visiva</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che rappresenta eventi sonori tramite segnali visivi.</rdfs:comment>
+        <rdfs:label xml:lang="it">Indicatori visivi audio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che permette di aumentare la dimensione del testo visualizzato.</rdfs:comment>
+        <rdfs:label xml:lang="it">Ingrandimento testo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaBase"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaElevata"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaMedia"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Classe enumerata che rappresenta tre livelli sintetici di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Livello di accessibilita</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che modifica colori o contrasti per supportare giocatori con difficolta nella distinzione cromatica.</rdfs:comment>
+        <rdfs:label xml:lang="it">Modalita per daltonismo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Sistema hardware o software su cui un videogioco e disponibile.</rdfs:comment>
+        <rdfs:label xml:lang="it">Piattaforma</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.wikidata.org/entity/Q241317"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Rappresentazione astratta di un giocatore o gruppo di giocatori con specifiche esigenze di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Profilo giocatore</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Publisher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Publisher">
+        <rdfs:comment xml:lang="it">Soggetto o organizzazione responsabile della pubblicazione o distribuzione commerciale di un videogioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Publisher</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.wikidata.org/entity/Q1137109"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che limita elementi visivi, sonori o interattivi potenzialmente sovraccaricanti.</rdfs:comment>
+        <rdfs:label xml:lang="it">Riduzione degli stimoli</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che consente di modificare l&apos;associazione tra azioni di gioco e dispositivi o pulsanti di input.</rdfs:comment>
+        <rdfs:label xml:lang="it">Rimappatura dei comandi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che rende disponibili in forma testuale dialoghi o informazioni sonore.</rdfs:comment>
+        <rdfs:label xml:lang="it">Sottotitoli</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Sottotitoli arricchiti con informazioni aggiuntive, personalizzazione o indicazione dei parlanti.</rdfs:comment>
+        <rdfs:label xml:lang="it">Sottotitoli avanzati</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sviluppatore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sviluppatore">
+        <rdfs:comment xml:lang="it">Soggetto o organizzazione responsabile dello sviluppo di un videogioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Sviluppatore</rdfs:label>
+        <skos:closeMatch rdf:resource="http://www.wikidata.org/entity/Q210167"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <rdfs:comment xml:lang="it">Funzionalita che accompagna il giocatore nell&apos;apprendimento di comandi, regole o obiettivi.</rdfs:comment>
+        <rdfs:label xml:lang="it">Tutorial guidato</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco">
+        <rdfs:comment xml:lang="it">Opera videoludica descritta dal punto di vista delle sue funzionalita di accessibilita e delle informazioni descrittive principali.</rdfs:comment>
+        <rdfs:label xml:lang="it">Videogioco</rdfs:label>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/ontology/VideoGame"/>
+        <skos:closeMatch rdf:resource="http://www.wikidata.org/entity/Q7889"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdfs:comment xml:lang="it">Videogioco che possiede almeno una funzionalita di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Videogioco accessibile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <rdfs:comment xml:lang="it">Videogioco che offre almeno una funzionalita utile a esigenze di accessibilita cognitiva.</rdfs:comment>
+        <rdfs:label xml:lang="it">Videogioco accessibile per utenti con esigenze cognitive</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <rdfs:comment xml:lang="it">Videogioco che offre almeno una funzionalita utile a esigenze di accessibilita motoria.</rdfs:comment>
+        <rdfs:label xml:lang="it">Videogioco accessibile per utenti con esigenze motorie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <rdfs:comment xml:lang="it">Videogioco che offre almeno una funzionalita utile a esigenze di accessibilita uditiva.</rdfs:comment>
+        <rdfs:label xml:lang="it">Videogioco accessibile per utenti con esigenze uditive</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <rdfs:comment xml:lang="it">Videogioco che offre almeno una funzionalita utile a esigenze di accessibilita visiva.</rdfs:comment>
+        <rdfs:label xml:lang="it">Videogioco accessibile per utenti con esigenze visive</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <rdfs:comment xml:lang="it">Videogioco che possiede almeno quattro funzionalita di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Videogioco altamente accessibile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaBase -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaBase">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <rdfs:comment xml:lang="it">Livello sintetico che indica la presenza di un insieme limitato di funzionalita di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Accessibilita base</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaElevata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaElevata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <rdfs:comment xml:lang="it">Livello sintetico che indica la presenza di un insieme ampio di funzionalita di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Accessibilita elevata</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaMedia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaMedia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+        <rdfs:comment xml:lang="it">Livello sintetico che indica la presenza di un insieme intermedio di funzionalita di accessibilita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Accessibilita media</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrastoTLOU2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrastoTLOU2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrasto"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
+        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PercezioneElementiVisivi"/>
+        <rdfs:comment xml:lang="it">Istanza di funzionalita di alto contrasto presente nell&apos;esempio The Last of Us Part II.</rdfs:comment>
+        <rdfs:label xml:lang="it">Modalita alto contrasto di The Last of Us Part II</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeCeleste -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeCeleste">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistMode"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste"/>
+        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo"/>
+        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <rdfs:comment xml:lang="it">Istanza di modalita assistita presente nell&apos;esempio Celeste.</rdfs:comment>
+        <rdfs:label xml:lang="it">Assist mode di Celeste</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeTLOU2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeTLOU2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistMode"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
+        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <rdfs:comment xml:lang="it">Istanza di modalita assistita presente nell&apos;esempio The Last of Us Part II.</rdfs:comment>
+        <rdfs:label xml:lang="it">Assist mode di The Last of Us Part II</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <vgaccess:disponibileSu rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NintendoSwitch"/>
+        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeCeleste"/>
+        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificatiCeleste"/>
+        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabileCeleste"/>
+        <vgaccess:haLivelloAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaMedia"/>
+        <vgaccess:pubblicatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ExtremelyOKGames"/>
+        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo"/>
+        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <vgaccess:sviluppatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ExtremelyOKGames"/>
+        <vgaccess:haAnnoPubblicazione rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2018</vgaccess:haAnnoPubblicazione>
+        <vgaccess:haAnnoPubblicazione rdf:datatype="internal:anonymous-constants">2018</vgaccess:haAnnoPubblicazione>
+        <vgaccess:haDescrizioneBreve xml:lang="it">Videogioco usato come esempio per rappresentare funzionalita di assistenza, personalizzazione della difficolta e semplificazione dei controlli.</vgaccess:haDescrizioneBreve>
+        <vgaccess:haPunteggioAccessibilita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</vgaccess:haPunteggioAccessibilita>
+        <vgaccess:haTitoloPrincipale>Celeste</vgaccess:haTitoloPrincipale>
+        <rdfs:comment xml:lang="it">Esempio completo di videogioco con funzionalita di accessibilita motoria e cognitiva.</rdfs:comment>
+        <rdfs:label xml:lang="it">Celeste</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva"/>
+        <rdfs:comment xml:lang="it">Esigenza di comprendere dialoghi e informazioni sonore anche senza percepire l&apos;audio.</rdfs:comment>
+        <rdfs:label xml:lang="it">Comprensione dei dialoghi senza audio</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificatiCeleste -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificatiCeleste">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificati"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste"/>
+        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <rdfs:comment xml:lang="it">Istanza di controlli semplificati presente nell&apos;esempio Celeste.</rdfs:comment>
+        <rdfs:label xml:lang="it">Controlli semplificati di Celeste</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabileCeleste -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabileCeleste">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabile"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste"/>
+        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo"/>
+        <rdfs:comment xml:lang="it">Istanza di difficolta personalizzabile presente nell&apos;esempio Celeste.</rdfs:comment>
+        <rdfs:label xml:lang="it">Difficolta personalizzabile di Celeste</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ExtremelyOKGames -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ExtremelyOKGames">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Publisher"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sviluppatore"/>
+        <rdfs:comment xml:lang="it">Studio e publisher associato all&apos;esempio Celeste.</rdfs:comment>
+        <rdfs:label xml:lang="it">Extremely OK Games</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <rdfs:comment xml:lang="it">Individuo usato come nodo generale nella relazione transitiva piuSpecificoDi.</rdfs:comment>
+        <rdfs:label xml:lang="it">Categoria funzionalita uditiva</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaCognitiva"/>
+        <rdfs:comment xml:lang="it">Esigenza di contenere complessita, pressione o sovraccarico informativo durante il gioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Gestione del carico cognitivo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NaughtyDog -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NaughtyDog">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sviluppatore"/>
+        <rdfs:comment xml:lang="it">Studio di sviluppo videoludico associato all&apos;esempio The Last of Us Part II.</rdfs:comment>
+        <rdfs:label xml:lang="it">Naughty Dog</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NintendoSwitch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NintendoSwitch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <rdfs:comment xml:lang="it">Piattaforma videoludica Nintendo Switch.</rdfs:comment>
+        <rdfs:label xml:lang="it">Nintendo Switch</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PercezioneElementiVisivi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PercezioneElementiVisivi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva"/>
+        <rdfs:comment xml:lang="it">Esigenza di distinguere chiaramente elementi visivi, interfacce o oggetti di gioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Percezione degli elementi visivi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PlayStation4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PlayStation4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+        <rdfs:comment xml:lang="it">Piattaforma videoludica Sony PlayStation 4.</rdfs:comment>
+        <rdfs:label xml:lang="it">PlayStation 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatoreConEsigenzeMotorie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatoreConEsigenzeMotorie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <vgaccess:haEsigenzaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <rdfs:comment xml:lang="it">Profilo astratto di giocatore che necessita di supporto nell&apos;interazione fisica con il videogioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Profilo giocatore con esigenze motorie</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatoreConEsigenzeUditive -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatoreConEsigenzeUditive">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <vgaccess:haEsigenzaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio"/>
+        <rdfs:comment xml:lang="it">Profilo astratto di giocatore che necessita di supporto nella comprensione di dialoghi e informazioni sonore.</rdfs:comment>
+        <rdfs:label xml:lang="it">Profilo giocatore con esigenze uditive</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria"/>
+        <rdfs:comment xml:lang="it">Esigenza di ridurre la complessita, la rapidita o la precisione richiesta dall&apos;interazione fisica.</rdfs:comment>
+        <rdfs:label xml:lang="it">Riduzione delle barriere motorie</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandiTLOU2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandiTLOU2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
+        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <rdfs:comment xml:lang="it">Istanza di funzionalita di rimappatura dei comandi presente nell&apos;esempio The Last of Us Part II.</rdfs:comment>
+        <rdfs:label xml:lang="it">Rimappatura comandi di The Last of Us Part II</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SonyInteractiveEntertainment -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SonyInteractiveEntertainment">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Publisher"/>
+        <rdfs:comment xml:lang="it">Publisher associato all&apos;esempio The Last of Us Part II.</rdfs:comment>
+        <rdfs:label xml:lang="it">Sony Interactive Entertainment</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiCategoria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiCategoria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria"/>
+        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliCategoria"/>
+        <rdfs:comment xml:lang="it">Individuo usato per mostrare la relazione transitiva piuSpecificoDi nella gerarchia delle funzionalita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Categoria sottotitoli avanzati</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiTLOU2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiTLOU2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
+        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
+        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria"/>
+        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiCategoria"/>
+        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliCategoria"/>
+        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio"/>
+        <rdfs:comment xml:lang="it">Istanza di funzionalita di sottotitoli avanzati presente nell&apos;esempio The Last of Us Part II.</rdfs:comment>
+        <rdfs:label xml:lang="it">Sottotitoli avanzati di The Last of Us Part II</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliCategoria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliCategoria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
+        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria"/>
+        <rdfs:comment xml:lang="it">Individuo usato per mostrare la relazione transitiva piuSpecificoDi nella gerarchia delle funzionalita.</rdfs:comment>
+        <rdfs:label xml:lang="it">Categoria sottotitoli</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
+        <vgaccess:disponibileSu rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PlayStation4"/>
+        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrastoTLOU2"/>
+        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeTLOU2"/>
+        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandiTLOU2"/>
+        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiTLOU2"/>
+        <vgaccess:haLivelloAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaElevata"/>
+        <vgaccess:pubblicatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SonyInteractiveEntertainment"/>
+        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio"/>
+        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PercezioneElementiVisivi"/>
+        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <vgaccess:sviluppatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NaughtyDog"/>
+        <vgaccess:haAnnoPubblicazione rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2020</vgaccess:haAnnoPubblicazione>
+        <vgaccess:haAnnoPubblicazione rdf:datatype="internal:anonymous-constants">2020</vgaccess:haAnnoPubblicazione>
+        <vgaccess:haDescrizioneBreve xml:lang="it">Videogioco usato come esempio per rappresentare un insieme ampio di funzionalita di accessibilita.</vgaccess:haDescrizioneBreve>
+        <vgaccess:haPunteggioAccessibilita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</vgaccess:haPunteggioAccessibilita>
+        <vgaccess:haTitoloPrincipale>The Last of Us Part II</vgaccess:haTitoloPrincipale>
+        <rdfs:comment xml:lang="it">Esempio completo di videogioco con piu funzionalita di accessibilita visiva, uditiva e motoria.</rdfs:comment>
+        <rdfs:label xml:lang="it">The Last of Us Part II</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#InterazioneGiocatore">
+        <rdfs:comment xml:lang="it">Concetto generale relativo alle modalita con cui il giocatore interagisce con il sistema di gioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Interazione del giocatore</rdfs:label>
+        <skos:closeMatch rdf:resource="https://gameontology.com/index.php/Interface"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RegolaDiGioco">
+        <rdfs:comment xml:lang="it">Concetto generale relativo ai vincoli e alle condizioni che regolano il funzionamento del gioco.</rdfs:comment>
+        <rdfs:label xml:lang="it">Regola di gioco</rdfs:label>
+        <skos:closeMatch rdf:resource="https://gameontology.com/index.php/Rules"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrasto"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistMode"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificati"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabile"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaCognitiva"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

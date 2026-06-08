@@ -9,12 +9,14 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:vgaccess="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess">
         <dc:creator xml:lang="it">Alex Agliuzza</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-24</dc:date>
         <dc:description xml:lang="it">Ontologia per descrivere videogiochi in relazione alle funzionalita di accessibilita offerte, alle esigenze dei giocatori e ai profili utente supportati.</dc:description>
         <dc:title xml:lang="it">VGAccess: ontologia per la rappresentazione dell&apos;accessibilita nei videogiochi</dc:title>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <vann:preferredNamespacePrefix>vgaccess</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>&lt;http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#&gt;</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="it">Ontologia sviluppata come progetto di modellazione concettuale per il Web Semantico.</rdfs:comment>
@@ -58,6 +60,12 @@
     
 
 
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
     <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
@@ -97,7 +105,6 @@
 
     <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
     
-
 
 
     <!-- 
@@ -1210,8 +1217,8 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrasto"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva"/>
-        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
-        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PercezioneElementiVisivi"/>
+        <eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
+        <supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PercezioneElementiVisivi"/>
         <rdfs:comment xml:lang="it">Istanza di funzionalita di alto contrasto presente nell&apos;esempio The Last of Us Part II.</rdfs:comment>
         <rdfs:label xml:lang="it">Modalita alto contrasto di The Last of Us Part II</rdfs:label>
     </owl:NamedIndividual>
@@ -1224,9 +1231,9 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistMode"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
-        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste"/>
-        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo"/>
-        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste"/>
+        <supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo"/>
+        <supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
         <rdfs:comment xml:lang="it">Istanza di modalita assistita presente nell&apos;esempio Celeste.</rdfs:comment>
         <rdfs:label xml:lang="it">Assist mode di Celeste</rdfs:label>
     </owl:NamedIndividual>
@@ -1239,8 +1246,8 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistMode"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
-        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
-        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
+        <supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
         <rdfs:comment xml:lang="it">Istanza di modalita assistita presente nell&apos;esempio The Last of Us Part II.</rdfs:comment>
         <rdfs:label xml:lang="it">Assist mode di The Last of Us Part II</rdfs:label>
     </owl:NamedIndividual>
@@ -1254,19 +1261,19 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiCognitivi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiMotori"/>
-        <vgaccess:disponibileSu rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NintendoSwitch"/>
-        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeCeleste"/>
-        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificatiCeleste"/>
-        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabileCeleste"/>
-        <vgaccess:haLivelloAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaMedia"/>
-        <vgaccess:pubblicatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ExtremelyOKGames"/>
-        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo"/>
-        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
-        <vgaccess:sviluppatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ExtremelyOKGames"/>
-        <vgaccess:haAnnoPubblicazione rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2018</vgaccess:haAnnoPubblicazione>
-        <vgaccess:haDescrizioneBreve xml:lang="it">Videogioco usato come esempio per rappresentare funzionalita di assistenza, personalizzazione della difficolta e semplificazione dei controlli.</vgaccess:haDescrizioneBreve>
-        <vgaccess:haPunteggioAccessibilita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</vgaccess:haPunteggioAccessibilita>
-        <vgaccess:haTitoloPrincipale>Celeste</vgaccess:haTitoloPrincipale>
+        <disponibileSu rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NintendoSwitch"/>
+        <haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeCeleste"/>
+        <haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificatiCeleste"/>
+        <haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabileCeleste"/>
+        <haLivelloAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaMedia"/>
+        <pubblicatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ExtremelyOKGames"/>
+        <supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo"/>
+        <supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <sviluppatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ExtremelyOKGames"/>
+        <haAnnoPubblicazione rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2018</haAnnoPubblicazione>
+        <haDescrizioneBreve xml:lang="it">Videogioco usato come esempio per rappresentare funzionalita di assistenza, personalizzazione della difficolta e semplificazione dei controlli.</haDescrizioneBreve>
+        <haPunteggioAccessibilita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</haPunteggioAccessibilita>
+        <haTitoloPrincipale>Celeste</haTitoloPrincipale>
         <rdfs:comment xml:lang="it">Esempio completo di videogioco con funzionalita di accessibilita motoria e cognitiva.</rdfs:comment>
         <rdfs:label xml:lang="it">Celeste</rdfs:label>
     </owl:NamedIndividual>
@@ -1290,8 +1297,8 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificati"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
-        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste"/>
-        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste"/>
+        <supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
         <rdfs:comment xml:lang="it">Istanza di controlli semplificati presente nell&apos;esempio Celeste.</rdfs:comment>
         <rdfs:label xml:lang="it">Controlli semplificati di Celeste</rdfs:label>
     </owl:NamedIndividual>
@@ -1304,8 +1311,8 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabile"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva"/>
-        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste"/>
-        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo"/>
+        <eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste"/>
+        <supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo"/>
         <rdfs:comment xml:lang="it">Istanza di difficolta personalizzabile presente nell&apos;esempio Celeste.</rdfs:comment>
         <rdfs:label xml:lang="it">Difficolta personalizzabile di Celeste</rdfs:label>
     </owl:NamedIndividual>
@@ -1390,7 +1397,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatoreConEsigenzeMotorie">
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
-        <vgaccess:haEsigenzaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <haEsigenzaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
         <rdfs:comment xml:lang="it">Profilo astratto di giocatore che necessita di supporto nell&apos;interazione fisica con il videogioco.</rdfs:comment>
         <rdfs:label xml:lang="it">Profilo giocatore con esigenze motorie</rdfs:label>
     </owl:NamedIndividual>
@@ -1401,7 +1408,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatoreConEsigenzeUditive">
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
-        <vgaccess:haEsigenzaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio"/>
+        <haEsigenzaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio"/>
         <rdfs:comment xml:lang="it">Profilo astratto di giocatore che necessita di supporto nella comprensione di dialoghi e informazioni sonore.</rdfs:comment>
         <rdfs:label xml:lang="it">Profilo giocatore con esigenze uditive</rdfs:label>
     </owl:NamedIndividual>
@@ -1425,8 +1432,8 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi"/>
-        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
-        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
+        <supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
         <rdfs:comment xml:lang="it">Istanza di funzionalita di rimappatura dei comandi presente nell&apos;esempio The Last of Us Part II.</rdfs:comment>
         <rdfs:label xml:lang="it">Rimappatura comandi di The Last of Us Part II</rdfs:label>
     </owl:NamedIndividual>
@@ -1450,8 +1457,8 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
-        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria"/>
-        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliCategoria"/>
+        <piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria"/>
+        <piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliCategoria"/>
         <rdfs:comment xml:lang="it">Individuo usato per mostrare la relazione transitiva piuSpecificoDi nella gerarchia delle funzionalita.</rdfs:comment>
         <rdfs:label xml:lang="it">Categoria sottotitoli avanzati</rdfs:label>
     </owl:NamedIndividual>
@@ -1465,11 +1472,11 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati"/>
-        <vgaccess:eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
-        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria"/>
-        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiCategoria"/>
-        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliCategoria"/>
-        <vgaccess:supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio"/>
+        <eFunzionalitaDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII"/>
+        <piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria"/>
+        <piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiCategoria"/>
+        <piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliCategoria"/>
+        <supportaEsigenza rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio"/>
         <rdfs:comment xml:lang="it">Istanza di funzionalita di sottotitoli avanzati presente nell&apos;esempio The Last of Us Part II.</rdfs:comment>
         <rdfs:label xml:lang="it">Sottotitoli avanzati di The Last of Us Part II</rdfs:label>
     </owl:NamedIndividual>
@@ -1482,7 +1489,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli"/>
-        <vgaccess:piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria"/>
+        <piuSpecificoDi rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria"/>
         <rdfs:comment xml:lang="it">Individuo usato per mostrare la relazione transitiva piuSpecificoDi nella gerarchia delle funzionalita.</rdfs:comment>
         <rdfs:label xml:lang="it">Categoria sottotitoli</rdfs:label>
     </owl:NamedIndividual>
@@ -1498,21 +1505,21 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiUditivi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibilePerUtentiVisivi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAltamenteAccessibile"/>
-        <vgaccess:disponibileSu rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PlayStation4"/>
-        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrastoTLOU2"/>
-        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeTLOU2"/>
-        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandiTLOU2"/>
-        <vgaccess:haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiTLOU2"/>
-        <vgaccess:haLivelloAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaElevata"/>
-        <vgaccess:pubblicatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SonyInteractiveEntertainment"/>
-        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio"/>
-        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PercezioneElementiVisivi"/>
-        <vgaccess:supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
-        <vgaccess:sviluppatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NaughtyDog"/>
-        <vgaccess:haAnnoPubblicazione rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2020</vgaccess:haAnnoPubblicazione>
-        <vgaccess:haDescrizioneBreve xml:lang="it">Videogioco usato come esempio per rappresentare un insieme ampio di funzionalita di accessibilita.</vgaccess:haDescrizioneBreve>
-        <vgaccess:haPunteggioAccessibilita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</vgaccess:haPunteggioAccessibilita>
-        <vgaccess:haTitoloPrincipale>The Last of Us Part II</vgaccess:haTitoloPrincipale>
+        <disponibileSu rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PlayStation4"/>
+        <haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrastoTLOU2"/>
+        <haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeTLOU2"/>
+        <haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandiTLOU2"/>
+        <haFunzionalitaAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiTLOU2"/>
+        <haLivelloAccessibilita rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AccessibilitaElevata"/>
+        <pubblicatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SonyInteractiveEntertainment"/>
+        <supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio"/>
+        <supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PercezioneElementiVisivi"/>
+        <supportaEsigenzaGiocatore rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie"/>
+        <sviluppatoDa rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#NaughtyDog"/>
+        <haAnnoPubblicazione rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2020</haAnnoPubblicazione>
+        <haDescrizioneBreve xml:lang="it">Videogioco usato come esempio per rappresentare un insieme ampio di funzionalita di accessibilita.</haDescrizioneBreve>
+        <haPunteggioAccessibilita rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</haPunteggioAccessibilita>
+        <haTitoloPrincipale>The Last of Us Part II</haTitoloPrincipale>
         <rdfs:comment xml:lang="it">Esempio completo di videogioco con piu funzionalita di accessibilita visiva, uditiva e motoria.</rdfs:comment>
         <rdfs:label xml:lang="it">The Last of Us Part II</rdfs:label>
     </owl:NamedIndividual>

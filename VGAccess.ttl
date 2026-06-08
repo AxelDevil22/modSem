@@ -1,5 +1,6 @@
 @prefix : <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -15,6 +16,7 @@
                                                                       dc:date "2026-05-24"^^xsd:date ;
                                                                       dc:description "Ontologia per descrivere videogiochi in relazione alle funzionalita di accessibilita offerte, alle esigenze dei giocatori e ai profili utente supportati."@it ;
                                                                       dc:title "VGAccess: ontologia per la rappresentazione dell'accessibilita nei videogiochi"@it ;
+                                                                      dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
                                                                       vann:preferredNamespacePrefix "vgaccess" ;
                                                                       vann:preferredNamespaceUri "<http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#>" ;
                                                                       rdfs:comment "Ontologia sviluppata come progetto di modellazione concettuale per il Web Semantico."@it ;

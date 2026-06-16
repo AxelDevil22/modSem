@@ -1,6 +1,5 @@
 @prefix : <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -8,8 +7,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix vgaccess: <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#> .
-@base <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#> .
+@base <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess> .
 
 <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess> rdf:type owl:Ontology ;
                                                                       dc:creator "Alex Agliuzza"@it ;
@@ -42,6 +42,10 @@ dc:description rdf:type owl:AnnotationProperty .
 dc:title rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
 vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
@@ -52,6 +56,10 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#closeMatch
 skos:closeMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -66,25 +74,43 @@ xsd:date rdf:type rdfs:Datatype .
 xsd:gYear rdf:type rdfs:Datatype .
 
 
-
 #################################################################
 #    Object Properties
 #################################################################
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#adattoAProfilo
 vgaccess:adattoAProfilo rdf:type owl:ObjectProperty ;
+                        owl:inverseOf vgaccess:profiloAdattoA ;
                         rdfs:domain vgaccess:Videogioco ;
                         rdfs:range vgaccess:ProfiloGiocatore ;
                         rdfs:comment "Collega un videogioco a un profilo giocatore per cui il gioco puo essere considerato adatto."@it ;
                         rdfs:label "adatto a profilo"@it .
 
 
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#classifica
+vgaccess:classifica rdf:type owl:ObjectProperty ;
+                    owl:inverseOf vgaccess:eClassificatoDa ;
+                    rdfs:domain vgaccess:ConcettoDiClassificazione ;
+                    rdfs:range vgaccess:Videogioco ;
+                    rdfs:comment "Collega un concetto di classificazione al videogioco che viene classificato da tale concetto."@it ;
+                    rdfs:label "classifica" .
+
+
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#disponibileSu
 vgaccess:disponibileSu rdf:type owl:ObjectProperty ;
+                       owl:inverseOf vgaccess:piattaformaDiVideogioco ;
                        rdfs:domain vgaccess:Videogioco ;
                        rdfs:range vgaccess:Piattaforma ;
                        rdfs:comment "Collega un videogioco alla piattaforma su cui e disponibile."@it ;
                        rdfs:label "disponibile su"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#eClassificatoDa
+vgaccess:eClassificatoDa rdf:type owl:ObjectProperty ;
+                         rdfs:domain vgaccess:Videogioco ;
+                         rdfs:range vgaccess:ConcettoDiClassificazione ;
+                         rdfs:comment "Collega un videogioco al concetto di classificazione che lo descrive."@it ;
+                         rdfs:label "eClassificatoDa" .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#eFunzionalitaDi
@@ -94,6 +120,33 @@ vgaccess:eFunzionalitaDi rdf:type owl:ObjectProperty ;
                          rdfs:range vgaccess:Videogioco ;
                          rdfs:comment "Collega una funzionalita di accessibilita al videogioco in cui e presente."@it ;
                          rdfs:label "e funzionalita di"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#esigenzaDiProfilo
+vgaccess:esigenzaDiProfilo rdf:type owl:ObjectProperty ;
+                           owl:inverseOf vgaccess:haEsigenzaAccessibilita ;
+                           rdfs:domain vgaccess:EsigenzaAccessibilita ;
+                           rdfs:range vgaccess:ProfiloGiocatore ;
+                           rdfs:comment "Collega un'esigenza di accessibilita ai profili giocatore che presentano tale esigenza."@it ;
+                           rdfs:label "esigenza di profilo"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#esigenzaSupportataDaFunzionalita
+vgaccess:esigenzaSupportataDaFunzionalita rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf vgaccess:supportaEsigenza ;
+                                          rdfs:domain vgaccess:EsigenzaAccessibilita ;
+                                          rdfs:range vgaccess:FunzionalitaAccessibilita ;
+                                          rdfs:comment "Collega un'esigenza di accessibilita alle funzionalita che la supportano."@it ;
+                                          rdfs:label "esigenza supportata da funzionalita"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#esigenzaSupportataDaVideogioco
+vgaccess:esigenzaSupportataDaVideogioco rdf:type owl:ObjectProperty ;
+                                        owl:inverseOf vgaccess:supportaEsigenzaGiocatore ;
+                                        rdfs:domain vgaccess:EsigenzaAccessibilita ;
+                                        rdfs:range vgaccess:Videogioco ;
+                                        rdfs:comment "Collega un'esigenza del giocatore ai videogiochi che la supportano."@it ;
+                                        rdfs:label "esigenza supportata da videogioco"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haEsigenzaAccessibilita
@@ -106,6 +159,7 @@ vgaccess:haEsigenzaAccessibilita rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haFunzionalitaAccessibilita
 vgaccess:haFunzionalitaAccessibilita rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf vgaccess:eClassificatoDa ;
                                      rdfs:domain vgaccess:Videogioco ;
                                      rdfs:range vgaccess:FunzionalitaAccessibilita ;
                                      rdfs:comment "Collega un videogioco a una funzionalita di accessibilita presente nel gioco."@it ;
@@ -113,12 +167,40 @@ vgaccess:haFunzionalitaAccessibilita rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haLivelloAccessibilita
-vgaccess:haLivelloAccessibilita rdf:type owl:ObjectProperty ,
-                                         owl:FunctionalProperty ;
+vgaccess:haLivelloAccessibilita rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf vgaccess:eClassificatoDa ;
+                                owl:inverseOf vgaccess:livelloAccessibilitaDi ;
+                                rdf:type owl:FunctionalProperty ;
                                 rdfs:domain vgaccess:Videogioco ;
                                 rdfs:range vgaccess:LivelloAccessibilita ;
                                 rdfs:comment "Collega un videogioco a un unico livello sintetico di accessibilita."@it ;
                                 rdfs:label "ha livello di accessibilita"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#livelloAccessibilitaDi
+vgaccess:livelloAccessibilitaDi rdf:type owl:ObjectProperty ;
+                                rdfs:domain vgaccess:LivelloAccessibilita ;
+                                rdfs:range vgaccess:Videogioco ;
+                                rdfs:comment "Collega un livello sintetico di accessibilita ai videogiochi che hanno tale livello."@it ;
+                                rdfs:label "livello di accessibilita di"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#piattaformaDiVideogioco
+vgaccess:piattaformaDiVideogioco rdf:type owl:ObjectProperty ;
+                                 rdfs:domain vgaccess:Piattaforma ;
+                                 rdfs:range vgaccess:Videogioco ;
+                                 rdfs:comment "Collega una piattaforma ai videogiochi disponibili su di essa."@it ;
+                                 rdfs:label "piattaforma di videogioco"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#piuGeneraleDi
+vgaccess:piuGeneraleDi rdf:type owl:ObjectProperty ;
+                       owl:inverseOf vgaccess:piuSpecificoDi ;
+                       rdf:type owl:TransitiveProperty ;
+                       rdfs:domain vgaccess:FunzionalitaAccessibilita ;
+                       rdfs:range vgaccess:FunzionalitaAccessibilita ;
+                       rdfs:comment "Collega una funzionalita di accessibilita piu generale a una funzionalita piu specifica."@it ;
+                       rdfs:label "piu generale di"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#piuSpecificoDi
@@ -128,6 +210,23 @@ vgaccess:piuSpecificoDi rdf:type owl:ObjectProperty ,
                         rdfs:range vgaccess:FunzionalitaAccessibilita ;
                         rdfs:comment "Relazione transitiva usata per rappresentare gerarchie concettuali tra funzionalita o bisogni."@it ;
                         rdfs:label "piu specifico di"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#profiloAdattoA
+vgaccess:profiloAdattoA rdf:type owl:ObjectProperty ;
+                        rdfs:domain vgaccess:ProfiloGiocatore ;
+                        rdfs:range vgaccess:Videogioco ;
+                        rdfs:comment "Collega un profilo giocatore ai videogiochi adatti a quel profilo."@it ;
+                        rdfs:label "profilo adatto a"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#pubblicaVideogioco
+vgaccess:pubblicaVideogioco rdf:type owl:ObjectProperty ;
+                            owl:inverseOf vgaccess:pubblicatoDa ;
+                            rdfs:domain vgaccess:Publisher ;
+                            rdfs:range vgaccess:Videogioco ;
+                            rdfs:comment "Collega un publisher ai videogiochi che ha pubblicato."@it ;
+                            rdfs:label "pubblica videogioco"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#pubblicatoDa
@@ -147,9 +246,8 @@ vgaccess:supportaEsigenza rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#supportaEsigenzaGiocatore
-vgaccess:supportaEsigenzaGiocatore rdf:type owl:ObjectProperty ,
-                                            owl:AsymmetricProperty ,
-                                            owl:IrreflexiveProperty ;
+vgaccess:supportaEsigenzaGiocatore rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf vgaccess:eClassificatoDa ;
                                    rdfs:domain vgaccess:Videogioco ;
                                    rdfs:range vgaccess:EsigenzaAccessibilita ;
                                    owl:propertyChainAxiom ( vgaccess:haFunzionalitaAccessibilita
@@ -157,6 +255,15 @@ vgaccess:supportaEsigenzaGiocatore rdf:type owl:ObjectProperty ,
                                                           ) ;
                                    rdfs:comment "Collega un videogioco a un'esigenza del giocatore inferita tramite le sue funzionalita di accessibilita."@it ;
                                    rdfs:label "supporta esigenza del giocatore"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#sviluppaVideogioco
+vgaccess:sviluppaVideogioco rdf:type owl:ObjectProperty ;
+                            owl:inverseOf vgaccess:sviluppatoDa ;
+                            rdfs:domain vgaccess:Sviluppatore ;
+                            rdfs:range vgaccess:Videogioco ;
+                            rdfs:comment "Collega uno sviluppatore ai videogiochi che ha sviluppato."@it ;
+                            rdfs:label "sviluppa videogioco"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#sviluppatoDa
@@ -211,35 +318,6 @@ vgaccess:haTitoloPrincipale rdf:type owl:DatatypeProperty ,
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrasto
 vgaccess:AltoContrasto rdf:type owl:Class ;
                        rdfs:subClassOf vgaccess:FunzionalitaVisiva ;
-                       owl:disjointWith vgaccess:AssistMode ,
-                                        vgaccess:ControlliSemplificati ,
-                                        vgaccess:DifficoltaPersonalizzabile ,
-                                        vgaccess:EsigenzaAccessibilita ,
-                                        vgaccess:EsigenzaCognitiva ,
-                                        vgaccess:EsigenzaMotoria ,
-                                        vgaccess:EsigenzaUditiva ,
-                                        vgaccess:EsigenzaVisiva ,
-                                        vgaccess:FunzionalitaCognitiva ,
-                                        vgaccess:FunzionalitaMotoria ,
-                                        vgaccess:FunzionalitaUditiva ,
-                                        vgaccess:IndicatoriVisiviAudio ,
-                                        vgaccess:IngrandimentoTesto ,
-                                        vgaccess:LivelloAccessibilita ,
-                                        vgaccess:ModalitaDaltonismo ,
-                                        vgaccess:Piattaforma ,
-                                        vgaccess:ProfiloGiocatore ,
-                                        vgaccess:RiduzioneStimoli ,
-                                        vgaccess:RimappaturaComandi ,
-                                        vgaccess:Sottotitoli ,
-                                        vgaccess:SottotitoliAvanzati ,
-                                        vgaccess:TutorialGuidato ,
-                                        vgaccess:Videogioco ,
-                                        vgaccess:VideogiocoAccessibile ,
-                                        vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                        vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                        vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                        vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                        vgaccess:VideogiocoAltamenteAccessibile ;
                        rdfs:comment "Funzionalita che aumenta il contrasto visivo tra elementi di gioco, interfaccia e sfondo."@it ;
                        rdfs:label "Alto contrasto"@it .
 
@@ -247,68 +325,19 @@ vgaccess:AltoContrasto rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistMode
 vgaccess:AssistMode rdf:type owl:Class ;
                     rdfs:subClassOf vgaccess:FunzionalitaMotoria ;
-                    owl:disjointWith vgaccess:ControlliSemplificati ,
-                                     vgaccess:DifficoltaPersonalizzabile ,
-                                     vgaccess:EsigenzaAccessibilita ,
-                                     vgaccess:EsigenzaCognitiva ,
-                                     vgaccess:EsigenzaMotoria ,
-                                     vgaccess:EsigenzaUditiva ,
-                                     vgaccess:EsigenzaVisiva ,
-                                     vgaccess:FunzionalitaCognitiva ,
-                                     vgaccess:FunzionalitaUditiva ,
-                                     vgaccess:FunzionalitaVisiva ,
-                                     vgaccess:IndicatoriVisiviAudio ,
-                                     vgaccess:IngrandimentoTesto ,
-                                     vgaccess:LivelloAccessibilita ,
-                                     vgaccess:ModalitaDaltonismo ,
-                                     vgaccess:Piattaforma ,
-                                     vgaccess:ProfiloGiocatore ,
-                                     vgaccess:RiduzioneStimoli ,
-                                     vgaccess:RimappaturaComandi ,
-                                     vgaccess:Sottotitoli ,
-                                     vgaccess:SottotitoliAvanzati ,
-                                     vgaccess:TutorialGuidato ,
-                                     vgaccess:Videogioco ,
-                                     vgaccess:VideogiocoAccessibile ,
-                                     vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                     vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                     vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                     vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                     vgaccess:VideogiocoAltamenteAccessibile ;
                     rdfs:comment "Modalita di assistenza che modifica alcune regole o parametri di gioco per ridurre barriere di interazione."@it ;
                     rdfs:label "Assist mode"@it .
+
+
+###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ConcettoDiClassificazione
+vgaccess:ConcettoDiClassificazione rdf:type owl:Class ;
+                                   rdfs:comment "Concetto utilizzato per classificare videogiochi, funzionalità o profili rispetto al dominio dell'accessibilità." ;
+                                   rdfs:label "ConcettoDiClassificazione" .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificati
 vgaccess:ControlliSemplificati rdf:type owl:Class ;
                                rdfs:subClassOf vgaccess:FunzionalitaMotoria ;
-                               owl:disjointWith vgaccess:DifficoltaPersonalizzabile ,
-                                                vgaccess:EsigenzaAccessibilita ,
-                                                vgaccess:EsigenzaCognitiva ,
-                                                vgaccess:EsigenzaMotoria ,
-                                                vgaccess:EsigenzaUditiva ,
-                                                vgaccess:EsigenzaVisiva ,
-                                                vgaccess:FunzionalitaCognitiva ,
-                                                vgaccess:FunzionalitaUditiva ,
-                                                vgaccess:FunzionalitaVisiva ,
-                                                vgaccess:IndicatoriVisiviAudio ,
-                                                vgaccess:IngrandimentoTesto ,
-                                                vgaccess:LivelloAccessibilita ,
-                                                vgaccess:ModalitaDaltonismo ,
-                                                vgaccess:Piattaforma ,
-                                                vgaccess:ProfiloGiocatore ,
-                                                vgaccess:RiduzioneStimoli ,
-                                                vgaccess:RimappaturaComandi ,
-                                                vgaccess:Sottotitoli ,
-                                                vgaccess:SottotitoliAvanzati ,
-                                                vgaccess:TutorialGuidato ,
-                                                vgaccess:Videogioco ,
-                                                vgaccess:VideogiocoAccessibile ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                                vgaccess:VideogiocoAltamenteAccessibile ;
                                rdfs:comment "Funzionalita che riduce la complessita o la precisione richiesta per l'interazione motoria."@it ;
                                rdfs:label "Controlli semplificati"@it .
 
@@ -316,61 +345,20 @@ vgaccess:ControlliSemplificati rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabile
 vgaccess:DifficoltaPersonalizzabile rdf:type owl:Class ;
                                     rdfs:subClassOf vgaccess:FunzionalitaCognitiva ;
-                                    owl:disjointWith vgaccess:EsigenzaAccessibilita ,
-                                                     vgaccess:EsigenzaCognitiva ,
-                                                     vgaccess:EsigenzaMotoria ,
-                                                     vgaccess:EsigenzaUditiva ,
-                                                     vgaccess:EsigenzaVisiva ,
-                                                     vgaccess:FunzionalitaMotoria ,
-                                                     vgaccess:FunzionalitaUditiva ,
-                                                     vgaccess:FunzionalitaVisiva ,
-                                                     vgaccess:IndicatoriVisiviAudio ,
-                                                     vgaccess:IngrandimentoTesto ,
-                                                     vgaccess:LivelloAccessibilita ,
-                                                     vgaccess:ModalitaDaltonismo ,
-                                                     vgaccess:Piattaforma ,
-                                                     vgaccess:ProfiloGiocatore ,
-                                                     vgaccess:RiduzioneStimoli ,
-                                                     vgaccess:RimappaturaComandi ,
-                                                     vgaccess:Sottotitoli ,
-                                                     vgaccess:SottotitoliAvanzati ,
-                                                     vgaccess:TutorialGuidato ,
-                                                     vgaccess:Videogioco ,
-                                                     vgaccess:VideogiocoAccessibile ,
-                                                     vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                                     vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                                     vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                                     vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                                     vgaccess:VideogiocoAltamenteAccessibile ;
                                     rdfs:comment "Funzionalita che consente di modificare parametri della difficolta per adattare l'esperienza alle esigenze del giocatore."@it ;
                                     rdfs:label "Difficolta personalizzabile"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita
 vgaccess:EsigenzaAccessibilita rdf:type owl:Class ;
+                               rdfs:subClassOf vgaccess:ConcettoDiClassificazione ;
                                owl:disjointWith vgaccess:FunzionalitaAccessibilita ,
-                                                vgaccess:FunzionalitaCognitiva ,
-                                                vgaccess:FunzionalitaMotoria ,
-                                                vgaccess:FunzionalitaUditiva ,
-                                                vgaccess:FunzionalitaVisiva ,
-                                                vgaccess:IndicatoriVisiviAudio ,
-                                                vgaccess:IngrandimentoTesto ,
                                                 vgaccess:LivelloAccessibilita ,
-                                                vgaccess:ModalitaDaltonismo ,
                                                 vgaccess:Piattaforma ,
                                                 vgaccess:ProfiloGiocatore ,
-                                                vgaccess:RiduzioneStimoli ,
-                                                vgaccess:RimappaturaComandi ,
-                                                vgaccess:Sottotitoli ,
-                                                vgaccess:SottotitoliAvanzati ,
-                                                vgaccess:TutorialGuidato ,
-                                                vgaccess:Videogioco ,
-                                                vgaccess:VideogiocoAccessibile ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                                vgaccess:VideogiocoAltamenteAccessibile ;
+                                                vgaccess:Publisher ,
+                                                vgaccess:Sviluppatore ,
+                                                vgaccess:Videogioco ;
                                rdfs:comment "Necessita o requisito del giocatore a cui una funzionalita di accessibilita puo rispondere."@it ;
                                rdfs:label "Esigenza di accessibilita"@it .
 
@@ -378,32 +366,6 @@ vgaccess:EsigenzaAccessibilita rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaCognitiva
 vgaccess:EsigenzaCognitiva rdf:type owl:Class ;
                            rdfs:subClassOf vgaccess:EsigenzaAccessibilita ;
-                           owl:disjointWith vgaccess:EsigenzaMotoria ,
-                                            vgaccess:EsigenzaUditiva ,
-                                            vgaccess:EsigenzaVisiva ,
-                                            vgaccess:FunzionalitaAccessibilita ,
-                                            vgaccess:FunzionalitaCognitiva ,
-                                            vgaccess:FunzionalitaMotoria ,
-                                            vgaccess:FunzionalitaUditiva ,
-                                            vgaccess:FunzionalitaVisiva ,
-                                            vgaccess:IndicatoriVisiviAudio ,
-                                            vgaccess:IngrandimentoTesto ,
-                                            vgaccess:LivelloAccessibilita ,
-                                            vgaccess:ModalitaDaltonismo ,
-                                            vgaccess:Piattaforma ,
-                                            vgaccess:ProfiloGiocatore ,
-                                            vgaccess:RiduzioneStimoli ,
-                                            vgaccess:RimappaturaComandi ,
-                                            vgaccess:Sottotitoli ,
-                                            vgaccess:SottotitoliAvanzati ,
-                                            vgaccess:TutorialGuidato ,
-                                            vgaccess:Videogioco ,
-                                            vgaccess:VideogiocoAccessibile ,
-                                            vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                            vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                            vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                            vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                            vgaccess:VideogiocoAltamenteAccessibile ;
                            rdfs:comment "Esigenza legata alla comprensione, alla memoria, all'attenzione o alla gestione della complessita."@it ;
                            rdfs:label "Esigenza cognitiva"@it .
 
@@ -411,31 +373,6 @@ vgaccess:EsigenzaCognitiva rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaMotoria
 vgaccess:EsigenzaMotoria rdf:type owl:Class ;
                          rdfs:subClassOf vgaccess:EsigenzaAccessibilita ;
-                         owl:disjointWith vgaccess:EsigenzaUditiva ,
-                                          vgaccess:EsigenzaVisiva ,
-                                          vgaccess:FunzionalitaAccessibilita ,
-                                          vgaccess:FunzionalitaCognitiva ,
-                                          vgaccess:FunzionalitaMotoria ,
-                                          vgaccess:FunzionalitaUditiva ,
-                                          vgaccess:FunzionalitaVisiva ,
-                                          vgaccess:IndicatoriVisiviAudio ,
-                                          vgaccess:IngrandimentoTesto ,
-                                          vgaccess:LivelloAccessibilita ,
-                                          vgaccess:ModalitaDaltonismo ,
-                                          vgaccess:Piattaforma ,
-                                          vgaccess:ProfiloGiocatore ,
-                                          vgaccess:RiduzioneStimoli ,
-                                          vgaccess:RimappaturaComandi ,
-                                          vgaccess:Sottotitoli ,
-                                          vgaccess:SottotitoliAvanzati ,
-                                          vgaccess:TutorialGuidato ,
-                                          vgaccess:Videogioco ,
-                                          vgaccess:VideogiocoAccessibile ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                          vgaccess:VideogiocoAltamenteAccessibile ;
                          rdfs:comment "Esigenza legata all'interazione fisica con controlli, periferiche o azioni di gioco."@it ;
                          rdfs:label "Esigenza motoria"@it .
 
@@ -443,30 +380,6 @@ vgaccess:EsigenzaMotoria rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaUditiva
 vgaccess:EsigenzaUditiva rdf:type owl:Class ;
                          rdfs:subClassOf vgaccess:EsigenzaAccessibilita ;
-                         owl:disjointWith vgaccess:EsigenzaVisiva ,
-                                          vgaccess:FunzionalitaAccessibilita ,
-                                          vgaccess:FunzionalitaCognitiva ,
-                                          vgaccess:FunzionalitaMotoria ,
-                                          vgaccess:FunzionalitaUditiva ,
-                                          vgaccess:FunzionalitaVisiva ,
-                                          vgaccess:IndicatoriVisiviAudio ,
-                                          vgaccess:IngrandimentoTesto ,
-                                          vgaccess:LivelloAccessibilita ,
-                                          vgaccess:ModalitaDaltonismo ,
-                                          vgaccess:Piattaforma ,
-                                          vgaccess:ProfiloGiocatore ,
-                                          vgaccess:RiduzioneStimoli ,
-                                          vgaccess:RimappaturaComandi ,
-                                          vgaccess:Sottotitoli ,
-                                          vgaccess:SottotitoliAvanzati ,
-                                          vgaccess:TutorialGuidato ,
-                                          vgaccess:Videogioco ,
-                                          vgaccess:VideogiocoAccessibile ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                          vgaccess:VideogiocoAltamenteAccessibile ;
                          rdfs:comment "Esigenza legata alla fruizione di suoni, dialoghi e feedback audio."@it ;
                          rdfs:label "Esigenza uditiva"@it .
 
@@ -474,45 +387,19 @@ vgaccess:EsigenzaUditiva rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaVisiva
 vgaccess:EsigenzaVisiva rdf:type owl:Class ;
                         rdfs:subClassOf vgaccess:EsigenzaAccessibilita ;
-                        owl:disjointWith vgaccess:FunzionalitaAccessibilita ,
-                                         vgaccess:FunzionalitaCognitiva ,
-                                         vgaccess:FunzionalitaMotoria ,
-                                         vgaccess:FunzionalitaUditiva ,
-                                         vgaccess:FunzionalitaVisiva ,
-                                         vgaccess:IndicatoriVisiviAudio ,
-                                         vgaccess:IngrandimentoTesto ,
-                                         vgaccess:LivelloAccessibilita ,
-                                         vgaccess:ModalitaDaltonismo ,
-                                         vgaccess:Piattaforma ,
-                                         vgaccess:ProfiloGiocatore ,
-                                         vgaccess:RiduzioneStimoli ,
-                                         vgaccess:RimappaturaComandi ,
-                                         vgaccess:Sottotitoli ,
-                                         vgaccess:SottotitoliAvanzati ,
-                                         vgaccess:TutorialGuidato ,
-                                         vgaccess:Videogioco ,
-                                         vgaccess:VideogiocoAccessibile ,
-                                         vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                         vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                         vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                         vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                         vgaccess:VideogiocoAltamenteAccessibile ;
                         rdfs:comment "Esigenza legata alla percezione visiva dei contenuti di gioco."@it ;
                         rdfs:label "Esigenza visiva"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita
 vgaccess:FunzionalitaAccessibilita rdf:type owl:Class ;
+                                   rdfs:subClassOf vgaccess:ConcettoDiClassificazione ;
                                    owl:disjointWith vgaccess:LivelloAccessibilita ,
                                                     vgaccess:Piattaforma ,
                                                     vgaccess:ProfiloGiocatore ,
-                                                    vgaccess:Videogioco ,
-                                                    vgaccess:VideogiocoAccessibile ,
-                                                    vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                                    vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                                    vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                                    vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                                    vgaccess:VideogiocoAltamenteAccessibile ;
+                                                    vgaccess:Publisher ,
+                                                    vgaccess:Sviluppatore ,
+                                                    vgaccess:Videogioco ;
                                    rdfs:comment "Caratteristica o opzione progettata per ridurre barriere di accesso e migliorare la fruizione del videogioco."@it ;
                                    rdfs:label "Funzionalita di accessibilita"@it .
 
@@ -520,25 +407,6 @@ vgaccess:FunzionalitaAccessibilita rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaCognitiva
 vgaccess:FunzionalitaCognitiva rdf:type owl:Class ;
                                rdfs:subClassOf vgaccess:FunzionalitaAccessibilita ;
-                               owl:disjointWith vgaccess:FunzionalitaMotoria ,
-                                                vgaccess:FunzionalitaUditiva ,
-                                                vgaccess:FunzionalitaVisiva ,
-                                                vgaccess:IndicatoriVisiviAudio ,
-                                                vgaccess:IngrandimentoTesto ,
-                                                vgaccess:LivelloAccessibilita ,
-                                                vgaccess:ModalitaDaltonismo ,
-                                                vgaccess:Piattaforma ,
-                                                vgaccess:ProfiloGiocatore ,
-                                                vgaccess:RimappaturaComandi ,
-                                                vgaccess:Sottotitoli ,
-                                                vgaccess:SottotitoliAvanzati ,
-                                                vgaccess:Videogioco ,
-                                                vgaccess:VideogiocoAccessibile ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                                vgaccess:VideogiocoAltamenteAccessibile ;
                                rdfs:comment "Funzionalita di accessibilita relativa alla comprensione, all'orientamento e alla gestione del carico cognitivo."@it ;
                                rdfs:label "Funzionalita cognitiva"@it .
 
@@ -546,25 +414,6 @@ vgaccess:FunzionalitaCognitiva rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaMotoria
 vgaccess:FunzionalitaMotoria rdf:type owl:Class ;
                              rdfs:subClassOf vgaccess:FunzionalitaAccessibilita ;
-                             owl:disjointWith vgaccess:FunzionalitaUditiva ,
-                                              vgaccess:FunzionalitaVisiva ,
-                                              vgaccess:IndicatoriVisiviAudio ,
-                                              vgaccess:IngrandimentoTesto ,
-                                              vgaccess:LivelloAccessibilita ,
-                                              vgaccess:ModalitaDaltonismo ,
-                                              vgaccess:Piattaforma ,
-                                              vgaccess:ProfiloGiocatore ,
-                                              vgaccess:RiduzioneStimoli ,
-                                              vgaccess:Sottotitoli ,
-                                              vgaccess:SottotitoliAvanzati ,
-                                              vgaccess:TutorialGuidato ,
-                                              vgaccess:Videogioco ,
-                                              vgaccess:VideogiocoAccessibile ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                              vgaccess:VideogiocoAltamenteAccessibile ;
                              rdfs:comment "Funzionalita di accessibilita relativa all'interazione fisica con il sistema di gioco."@it ;
                              rdfs:label "Funzionalita motoria"@it .
 
@@ -572,22 +421,6 @@ vgaccess:FunzionalitaMotoria rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditiva
 vgaccess:FunzionalitaUditiva rdf:type owl:Class ;
                              rdfs:subClassOf vgaccess:FunzionalitaAccessibilita ;
-                             owl:disjointWith vgaccess:FunzionalitaVisiva ,
-                                              vgaccess:IngrandimentoTesto ,
-                                              vgaccess:LivelloAccessibilita ,
-                                              vgaccess:ModalitaDaltonismo ,
-                                              vgaccess:Piattaforma ,
-                                              vgaccess:ProfiloGiocatore ,
-                                              vgaccess:RiduzioneStimoli ,
-                                              vgaccess:RimappaturaComandi ,
-                                              vgaccess:TutorialGuidato ,
-                                              vgaccess:Videogioco ,
-                                              vgaccess:VideogiocoAccessibile ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                              vgaccess:VideogiocoAltamenteAccessibile ;
                              rdfs:comment "Funzionalita di accessibilita relativa alla fruizione dei contenuti sonori o dialogici."@it ;
                              rdfs:label "Funzionalita uditiva"@it .
 
@@ -595,22 +428,6 @@ vgaccess:FunzionalitaUditiva rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaVisiva
 vgaccess:FunzionalitaVisiva rdf:type owl:Class ;
                             rdfs:subClassOf vgaccess:FunzionalitaAccessibilita ;
-                            owl:disjointWith vgaccess:IndicatoriVisiviAudio ,
-                                             vgaccess:LivelloAccessibilita ,
-                                             vgaccess:Piattaforma ,
-                                             vgaccess:ProfiloGiocatore ,
-                                             vgaccess:RiduzioneStimoli ,
-                                             vgaccess:RimappaturaComandi ,
-                                             vgaccess:Sottotitoli ,
-                                             vgaccess:SottotitoliAvanzati ,
-                                             vgaccess:TutorialGuidato ,
-                                             vgaccess:Videogioco ,
-                                             vgaccess:VideogiocoAccessibile ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                             vgaccess:VideogiocoAltamenteAccessibile ;
                             rdfs:comment "Funzionalita di accessibilita relativa alla percezione visiva dei contenuti."@it ;
                             rdfs:label "Funzionalita visiva"@it .
 
@@ -618,23 +435,6 @@ vgaccess:FunzionalitaVisiva rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IndicatoriVisiviAudio
 vgaccess:IndicatoriVisiviAudio rdf:type owl:Class ;
                                rdfs:subClassOf vgaccess:FunzionalitaUditiva ;
-                               owl:disjointWith vgaccess:IngrandimentoTesto ,
-                                                vgaccess:LivelloAccessibilita ,
-                                                vgaccess:ModalitaDaltonismo ,
-                                                vgaccess:Piattaforma ,
-                                                vgaccess:ProfiloGiocatore ,
-                                                vgaccess:RiduzioneStimoli ,
-                                                vgaccess:RimappaturaComandi ,
-                                                vgaccess:Sottotitoli ,
-                                                vgaccess:SottotitoliAvanzati ,
-                                                vgaccess:TutorialGuidato ,
-                                                vgaccess:Videogioco ,
-                                                vgaccess:VideogiocoAccessibile ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                                vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                                vgaccess:VideogiocoAltamenteAccessibile ;
                                rdfs:comment "Funzionalita che rappresenta eventi sonori tramite segnali visivi."@it ;
                                rdfs:label "Indicatori visivi audio"@it .
 
@@ -642,22 +442,6 @@ vgaccess:IndicatoriVisiviAudio rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#IngrandimentoTesto
 vgaccess:IngrandimentoTesto rdf:type owl:Class ;
                             rdfs:subClassOf vgaccess:FunzionalitaVisiva ;
-                            owl:disjointWith vgaccess:LivelloAccessibilita ,
-                                             vgaccess:ModalitaDaltonismo ,
-                                             vgaccess:Piattaforma ,
-                                             vgaccess:ProfiloGiocatore ,
-                                             vgaccess:RiduzioneStimoli ,
-                                             vgaccess:RimappaturaComandi ,
-                                             vgaccess:Sottotitoli ,
-                                             vgaccess:SottotitoliAvanzati ,
-                                             vgaccess:TutorialGuidato ,
-                                             vgaccess:Videogioco ,
-                                             vgaccess:VideogiocoAccessibile ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                             vgaccess:VideogiocoAltamenteAccessibile ;
                             rdfs:comment "Funzionalita che permette di aumentare la dimensione del testo visualizzato."@it ;
                             rdfs:label "Ingrandimento testo"@it .
 
@@ -670,21 +454,12 @@ vgaccess:LivelloAccessibilita rdf:type owl:Class ;
                                                                 vgaccess:AccessibilitaMedia
                                                               )
                                                   ] ;
-                              owl:disjointWith vgaccess:ModalitaDaltonismo ,
-                                               vgaccess:Piattaforma ,
+                              rdfs:subClassOf vgaccess:ConcettoDiClassificazione ;
+                              owl:disjointWith vgaccess:Piattaforma ,
                                                vgaccess:ProfiloGiocatore ,
-                                               vgaccess:RiduzioneStimoli ,
-                                               vgaccess:RimappaturaComandi ,
-                                               vgaccess:Sottotitoli ,
-                                               vgaccess:SottotitoliAvanzati ,
-                                               vgaccess:TutorialGuidato ,
-                                               vgaccess:Videogioco ,
-                                               vgaccess:VideogiocoAccessibile ,
-                                               vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                               vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                               vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                               vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                               vgaccess:VideogiocoAltamenteAccessibile ;
+                                               vgaccess:Publisher ,
+                                               vgaccess:Sviluppatore ,
+                                               vgaccess:Videogioco ;
                               rdfs:comment "Classe enumerata che rappresenta tre livelli sintetici di accessibilita."@it ;
                               rdfs:label "Livello di accessibilita"@it .
 
@@ -692,20 +467,6 @@ vgaccess:LivelloAccessibilita rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ModalitaDaltonismo
 vgaccess:ModalitaDaltonismo rdf:type owl:Class ;
                             rdfs:subClassOf vgaccess:FunzionalitaVisiva ;
-                            owl:disjointWith vgaccess:Piattaforma ,
-                                             vgaccess:ProfiloGiocatore ,
-                                             vgaccess:RiduzioneStimoli ,
-                                             vgaccess:RimappaturaComandi ,
-                                             vgaccess:Sottotitoli ,
-                                             vgaccess:SottotitoliAvanzati ,
-                                             vgaccess:TutorialGuidato ,
-                                             vgaccess:Videogioco ,
-                                             vgaccess:VideogiocoAccessibile ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                             vgaccess:VideogiocoAltamenteAccessibile ;
                             rdfs:comment "Funzionalita che modifica colori o contrasti per supportare giocatori con difficolta nella distinzione cromatica."@it ;
                             rdfs:label "Modalita per daltonismo"@it .
 
@@ -713,18 +474,9 @@ vgaccess:ModalitaDaltonismo rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma
 vgaccess:Piattaforma rdf:type owl:Class ;
                      owl:disjointWith vgaccess:ProfiloGiocatore ,
-                                      vgaccess:RiduzioneStimoli ,
-                                      vgaccess:RimappaturaComandi ,
-                                      vgaccess:Sottotitoli ,
-                                      vgaccess:SottotitoliAvanzati ,
-                                      vgaccess:TutorialGuidato ,
-                                      vgaccess:Videogioco ,
-                                      vgaccess:VideogiocoAccessibile ,
-                                      vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                      vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                      vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                      vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                      vgaccess:VideogiocoAltamenteAccessibile ;
+                                      vgaccess:Publisher ,
+                                      vgaccess:Sviluppatore ,
+                                      vgaccess:Videogioco ;
                      rdfs:comment "Sistema hardware o software su cui un videogioco e disponibile."@it ;
                      rdfs:label "Piattaforma"@it ;
                      skos:closeMatch <http://www.wikidata.org/entity/Q241317> .
@@ -732,43 +484,24 @@ vgaccess:Piattaforma rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore
 vgaccess:ProfiloGiocatore rdf:type owl:Class ;
-                          owl:disjointWith vgaccess:RiduzioneStimoli ,
-                                           vgaccess:RimappaturaComandi ,
-                                           vgaccess:Sottotitoli ,
-                                           vgaccess:SottotitoliAvanzati ,
-                                           vgaccess:TutorialGuidato ,
-                                           vgaccess:Videogioco ,
-                                           vgaccess:VideogiocoAccessibile ,
-                                           vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                           vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                           vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                           vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                           vgaccess:VideogiocoAltamenteAccessibile ;
+                          owl:disjointWith vgaccess:Publisher ,
+                                           vgaccess:Sviluppatore ,
+                                           vgaccess:Videogioco ;
                           rdfs:comment "Rappresentazione astratta di un giocatore o gruppo di giocatori con specifiche esigenze di accessibilita."@it ;
                           rdfs:label "Profilo giocatore"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Publisher
 vgaccess:Publisher rdf:type owl:Class ;
+                   owl:disjointWith vgaccess:Videogioco ;
                    rdfs:comment "Soggetto o organizzazione responsabile della pubblicazione o distribuzione commerciale di un videogioco."@it ;
                    rdfs:label "Publisher"@it ;
-                   skos:closeMatch <http://www.wikidata.org/entity/Q1137109> .
+                   skos:exactMatch <http://www.wikidata.org/entity/Q1137109> .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneStimoli
 vgaccess:RiduzioneStimoli rdf:type owl:Class ;
                           rdfs:subClassOf vgaccess:FunzionalitaCognitiva ;
-                          owl:disjointWith vgaccess:RimappaturaComandi ,
-                                           vgaccess:Sottotitoli ,
-                                           vgaccess:SottotitoliAvanzati ,
-                                           vgaccess:TutorialGuidato ,
-                                           vgaccess:Videogioco ,
-                                           vgaccess:VideogiocoAccessibile ,
-                                           vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                           vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                           vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                           vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                           vgaccess:VideogiocoAltamenteAccessibile ;
                           rdfs:comment "Funzionalita che limita elementi visivi, sonori o interattivi potenzialmente sovraccaricanti."@it ;
                           rdfs:label "Riduzione degli stimoli"@it .
 
@@ -776,16 +509,6 @@ vgaccess:RiduzioneStimoli rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandi
 vgaccess:RimappaturaComandi rdf:type owl:Class ;
                             rdfs:subClassOf vgaccess:FunzionalitaMotoria ;
-                            owl:disjointWith vgaccess:Sottotitoli ,
-                                             vgaccess:SottotitoliAvanzati ,
-                                             vgaccess:TutorialGuidato ,
-                                             vgaccess:Videogioco ,
-                                             vgaccess:VideogiocoAccessibile ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                             vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                             vgaccess:VideogiocoAltamenteAccessibile ;
                             rdfs:comment "Funzionalita che consente di modificare l'associazione tra azioni di gioco e dispositivi o pulsanti di input."@it ;
                             rdfs:label "Rimappatura dei comandi"@it .
 
@@ -793,14 +516,6 @@ vgaccess:RimappaturaComandi rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sottotitoli
 vgaccess:Sottotitoli rdf:type owl:Class ;
                      rdfs:subClassOf vgaccess:FunzionalitaUditiva ;
-                     owl:disjointWith vgaccess:TutorialGuidato ,
-                                      vgaccess:Videogioco ,
-                                      vgaccess:VideogiocoAccessibile ,
-                                      vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                      vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                      vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                      vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                      vgaccess:VideogiocoAltamenteAccessibile ;
                      rdfs:comment "Funzionalita che rende disponibili in forma testuale dialoghi o informazioni sonore."@it ;
                      rdfs:label "Sottotitoli"@it .
 
@@ -808,35 +523,21 @@ vgaccess:Sottotitoli rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzati
 vgaccess:SottotitoliAvanzati rdf:type owl:Class ;
                              rdfs:subClassOf vgaccess:Sottotitoli ;
-                             owl:disjointWith vgaccess:TutorialGuidato ,
-                                              vgaccess:Videogioco ,
-                                              vgaccess:VideogiocoAccessibile ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                              vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                              vgaccess:VideogiocoAltamenteAccessibile ;
                              rdfs:comment "Sottotitoli arricchiti con informazioni aggiuntive, personalizzazione o indicazione dei parlanti."@it ;
                              rdfs:label "Sottotitoli avanzati"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sviluppatore
 vgaccess:Sviluppatore rdf:type owl:Class ;
+                      owl:disjointWith vgaccess:Videogioco ;
                       rdfs:comment "Soggetto o organizzazione responsabile dello sviluppo di un videogioco."@it ;
                       rdfs:label "Sviluppatore"@it ;
-                      skos:closeMatch <http://www.wikidata.org/entity/Q210167> .
+                      skos:exactMatch <http://www.wikidata.org/entity/Q210167> .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TutorialGuidato
 vgaccess:TutorialGuidato rdf:type owl:Class ;
                          rdfs:subClassOf vgaccess:FunzionalitaCognitiva ;
-                         owl:disjointWith vgaccess:Videogioco ,
-                                          vgaccess:VideogiocoAccessibile ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                          vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                          vgaccess:VideogiocoAltamenteAccessibile ;
                          rdfs:comment "Funzionalita che accompagna il giocatore nell'apprendimento di comandi, regole o obiettivi."@it ;
                          rdfs:label "Tutorial guidato"@it .
 
@@ -845,8 +546,7 @@ vgaccess:TutorialGuidato rdf:type owl:Class ;
 vgaccess:Videogioco rdf:type owl:Class ;
                     rdfs:comment "Opera videoludica descritta dal punto di vista delle sue funzionalita di accessibilita e delle informazioni descrittive principali."@it ;
                     rdfs:label "Videogioco"@it ;
-                    skos:closeMatch <http://dbpedia.org/ontology/VideoGame> ,
-                                    <http://www.wikidata.org/entity/Q7889> .
+                    skos:exactMatch <http://dbpedia.org/ontology/VideoGame> .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile
@@ -874,7 +574,6 @@ vgaccess:VideogiocoAccessibilePerUtentiCognitivi rdf:type owl:Class ;
                                                                                           ) ;
                                                                        rdf:type owl:Class
                                                                      ] ;
-                                                 rdfs:subClassOf vgaccess:VideogiocoAccessibile ;
                                                  rdfs:comment "Videogioco che offre almeno una funzionalita utile a esigenze di accessibilita cognitiva."@it ;
                                                  rdfs:label "Videogioco accessibile per utenti con esigenze cognitive"@it .
 
@@ -889,7 +588,6 @@ vgaccess:VideogiocoAccessibilePerUtentiMotori rdf:type owl:Class ;
                                                                                        ) ;
                                                                     rdf:type owl:Class
                                                                   ] ;
-                                              rdfs:subClassOf vgaccess:VideogiocoAccessibile ;
                                               rdfs:comment "Videogioco che offre almeno una funzionalita utile a esigenze di accessibilita motoria."@it ;
                                               rdfs:label "Videogioco accessibile per utenti con esigenze motorie"@it .
 
@@ -904,7 +602,6 @@ vgaccess:VideogiocoAccessibilePerUtentiUditivi rdf:type owl:Class ;
                                                                                         ) ;
                                                                      rdf:type owl:Class
                                                                    ] ;
-                                               rdfs:subClassOf vgaccess:VideogiocoAccessibile ;
                                                rdfs:comment "Videogioco che offre almeno una funzionalita utile a esigenze di accessibilita uditiva."@it ;
                                                rdfs:label "Videogioco accessibile per utenti con esigenze uditive"@it .
 
@@ -919,7 +616,6 @@ vgaccess:VideogiocoAccessibilePerUtentiVisivi rdf:type owl:Class ;
                                                                                        ) ;
                                                                     rdf:type owl:Class
                                                                   ] ;
-                                              rdfs:subClassOf vgaccess:VideogiocoAccessibile ;
                                               rdfs:comment "Videogioco che offre almeno una funzionalita utile a esigenze di accessibilita visiva."@it ;
                                               rdfs:label "Videogioco accessibile per utenti con esigenze visive"@it .
 
@@ -935,7 +631,6 @@ vgaccess:VideogiocoAltamenteAccessibile rdf:type owl:Class ;
                                                                                  ) ;
                                                               rdf:type owl:Class
                                                             ] ;
-                                        rdfs:subClassOf vgaccess:VideogiocoAccessibile ;
                                         rdfs:comment "Videogioco che possiede almeno quattro funzionalita di accessibilita."@it ;
                                         rdfs:label "Videogioco altamente accessibile"@it .
 
@@ -967,9 +662,7 @@ vgaccess:AccessibilitaMedia rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AltoContrastoTLOU2
 vgaccess:AltoContrastoTLOU2 rdf:type owl:NamedIndividual ,
-                                     vgaccess:AltoContrasto ,
-                                     vgaccess:FunzionalitaAccessibilita ,
-                                     vgaccess:FunzionalitaVisiva ;
+                                     vgaccess:AltoContrasto ;
                             vgaccess:eFunzionalitaDi vgaccess:TheLastOfUsPartII ;
                             vgaccess:supportaEsigenza vgaccess:PercezioneElementiVisivi ;
                             rdfs:comment "Istanza di funzionalita di alto contrasto presente nell'esempio The Last of Us Part II."@it ;
@@ -978,9 +671,7 @@ vgaccess:AltoContrastoTLOU2 rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeCeleste
 vgaccess:AssistModeCeleste rdf:type owl:NamedIndividual ,
-                                    vgaccess:AssistMode ,
-                                    vgaccess:FunzionalitaAccessibilita ,
-                                    vgaccess:FunzionalitaMotoria ;
+                                    vgaccess:AssistMode ;
                            vgaccess:eFunzionalitaDi vgaccess:Celeste ;
                            vgaccess:supportaEsigenza vgaccess:GestioneCaricoCognitivo ,
                                                      vgaccess:RiduzioneBarriereMotorie ;
@@ -990,9 +681,7 @@ vgaccess:AssistModeCeleste rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#AssistModeTLOU2
 vgaccess:AssistModeTLOU2 rdf:type owl:NamedIndividual ,
-                                  vgaccess:AssistMode ,
-                                  vgaccess:FunzionalitaAccessibilita ,
-                                  vgaccess:FunzionalitaMotoria ;
+                                  vgaccess:AssistMode ;
                          vgaccess:eFunzionalitaDi vgaccess:TheLastOfUsPartII ;
                          vgaccess:supportaEsigenza vgaccess:RiduzioneBarriereMotorie ;
                          rdfs:comment "Istanza di modalita assistita presente nell'esempio The Last of Us Part II."@it ;
@@ -1001,10 +690,7 @@ vgaccess:AssistModeTLOU2 rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Celeste
 vgaccess:Celeste rdf:type owl:NamedIndividual ,
-                          vgaccess:Videogioco ,
-                          vgaccess:VideogiocoAccessibile ,
-                          vgaccess:VideogiocoAccessibilePerUtentiCognitivi ,
-                          vgaccess:VideogiocoAccessibilePerUtentiMotori ;
+                          vgaccess:Videogioco ;
                  vgaccess:disponibileSu vgaccess:NintendoSwitch ;
                  vgaccess:haFunzionalitaAccessibilita vgaccess:AssistModeCeleste ,
                                                       vgaccess:ControlliSemplificatiCeleste ,
@@ -1014,7 +700,7 @@ vgaccess:Celeste rdf:type owl:NamedIndividual ,
                  vgaccess:supportaEsigenzaGiocatore vgaccess:GestioneCaricoCognitivo ,
                                                     vgaccess:RiduzioneBarriereMotorie ;
                  vgaccess:sviluppatoDa vgaccess:ExtremelyOKGames ;
-                 vgaccess:haAnnoPubblicazione "2018"^^xsd:gYear;
+                 vgaccess:haAnnoPubblicazione "2018"^^xsd:gYear ;
                  vgaccess:haDescrizioneBreve "Videogioco usato come esempio per rappresentare funzionalita di assistenza, personalizzazione della difficolta e semplificazione dei controlli."@it ;
                  vgaccess:haPunteggioAccessibilita 4 ;
                  vgaccess:haTitoloPrincipale "Celeste" ;
@@ -1024,7 +710,6 @@ vgaccess:Celeste rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ComprensioneDialoghiSenzaAudio
 vgaccess:ComprensioneDialoghiSenzaAudio rdf:type owl:NamedIndividual ,
-                                                 vgaccess:EsigenzaAccessibilita ,
                                                  vgaccess:EsigenzaUditiva ;
                                         rdfs:comment "Esigenza di comprendere dialoghi e informazioni sonore anche senza percepire l'audio."@it ;
                                         rdfs:label "Comprensione dei dialoghi senza audio"@it .
@@ -1032,9 +717,7 @@ vgaccess:ComprensioneDialoghiSenzaAudio rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ControlliSemplificatiCeleste
 vgaccess:ControlliSemplificatiCeleste rdf:type owl:NamedIndividual ,
-                                               vgaccess:ControlliSemplificati ,
-                                               vgaccess:FunzionalitaAccessibilita ,
-                                               vgaccess:FunzionalitaMotoria ;
+                                               vgaccess:ControlliSemplificati ;
                                       vgaccess:eFunzionalitaDi vgaccess:Celeste ;
                                       vgaccess:supportaEsigenza vgaccess:RiduzioneBarriereMotorie ;
                                       rdfs:comment "Istanza di controlli semplificati presente nell'esempio Celeste."@it ;
@@ -1043,9 +726,7 @@ vgaccess:ControlliSemplificatiCeleste rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#DifficoltaPersonalizzabileCeleste
 vgaccess:DifficoltaPersonalizzabileCeleste rdf:type owl:NamedIndividual ,
-                                                    vgaccess:DifficoltaPersonalizzabile ,
-                                                    vgaccess:FunzionalitaAccessibilita ,
-                                                    vgaccess:FunzionalitaCognitiva ;
+                                                    vgaccess:DifficoltaPersonalizzabile ;
                                            vgaccess:eFunzionalitaDi vgaccess:Celeste ;
                                            vgaccess:supportaEsigenza vgaccess:GestioneCaricoCognitivo ;
                                            rdfs:comment "Istanza di difficolta personalizzabile presente nell'esempio Celeste."@it ;
@@ -1061,16 +742,13 @@ vgaccess:ExtremelyOKGames rdf:type owl:NamedIndividual ,
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaUditivaCategoria
-vgaccess:FunzionalitaUditivaCategoria rdf:type owl:NamedIndividual ,
-                                               vgaccess:FunzionalitaAccessibilita ,
-                                               vgaccess:FunzionalitaUditiva ;
+vgaccess:FunzionalitaUditivaCategoria rdf:type owl:NamedIndividual ;
                                       rdfs:comment "Individuo usato come nodo generale nella relazione transitiva piuSpecificoDi."@it ;
                                       rdfs:label "Categoria funzionalita uditiva"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#GestioneCaricoCognitivo
 vgaccess:GestioneCaricoCognitivo rdf:type owl:NamedIndividual ,
-                                          vgaccess:EsigenzaAccessibilita ,
                                           vgaccess:EsigenzaCognitiva ;
                                  rdfs:comment "Esigenza di contenere complessita, pressione o sovraccarico informativo durante il gioco."@it ;
                                  rdfs:label "Gestione del carico cognitivo"@it .
@@ -1092,7 +770,6 @@ vgaccess:NintendoSwitch rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#PercezioneElementiVisivi
 vgaccess:PercezioneElementiVisivi rdf:type owl:NamedIndividual ,
-                                           vgaccess:EsigenzaAccessibilita ,
                                            vgaccess:EsigenzaVisiva ;
                                   rdfs:comment "Esigenza di distinguere chiaramente elementi visivi, interfacce o oggetti di gioco."@it ;
                                   rdfs:label "Percezione degli elementi visivi"@it .
@@ -1123,7 +800,6 @@ vgaccess:ProfiloGiocatoreConEsigenzeUditive rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RiduzioneBarriereMotorie
 vgaccess:RiduzioneBarriereMotorie rdf:type owl:NamedIndividual ,
-                                           vgaccess:EsigenzaAccessibilita ,
                                            vgaccess:EsigenzaMotoria ;
                                   rdfs:comment "Esigenza di ridurre la complessita, la rapidita o la precisione richiesta dall'interazione fisica."@it ;
                                   rdfs:label "Riduzione delle barriere motorie"@it .
@@ -1131,8 +807,6 @@ vgaccess:RiduzioneBarriereMotorie rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RimappaturaComandiTLOU2
 vgaccess:RimappaturaComandiTLOU2 rdf:type owl:NamedIndividual ,
-                                          vgaccess:FunzionalitaAccessibilita ,
-                                          vgaccess:FunzionalitaMotoria ,
                                           vgaccess:RimappaturaComandi ;
                                  vgaccess:eFunzionalitaDi vgaccess:TheLastOfUsPartII ;
                                  vgaccess:supportaEsigenza vgaccess:RiduzioneBarriereMotorie ;
@@ -1149,9 +823,6 @@ vgaccess:SonyInteractiveEntertainment rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiCategoria
 vgaccess:SottotitoliAvanzatiCategoria rdf:type owl:NamedIndividual ,
-                                               vgaccess:FunzionalitaAccessibilita ,
-                                               vgaccess:FunzionalitaUditiva ,
-                                               vgaccess:Sottotitoli ,
                                                vgaccess:SottotitoliAvanzati ;
                                       vgaccess:piuSpecificoDi vgaccess:FunzionalitaUditivaCategoria ,
                                                               vgaccess:SottotitoliCategoria ;
@@ -1161,9 +832,6 @@ vgaccess:SottotitoliAvanzatiCategoria rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliAvanzatiTLOU2
 vgaccess:SottotitoliAvanzatiTLOU2 rdf:type owl:NamedIndividual ,
-                                           vgaccess:FunzionalitaAccessibilita ,
-                                           vgaccess:FunzionalitaUditiva ,
-                                           vgaccess:Sottotitoli ,
                                            vgaccess:SottotitoliAvanzati ;
                                   vgaccess:eFunzionalitaDi vgaccess:TheLastOfUsPartII ;
                                   vgaccess:piuSpecificoDi vgaccess:FunzionalitaUditivaCategoria ,
@@ -1176,8 +844,6 @@ vgaccess:SottotitoliAvanzatiTLOU2 rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#SottotitoliCategoria
 vgaccess:SottotitoliCategoria rdf:type owl:NamedIndividual ,
-                                       vgaccess:FunzionalitaAccessibilita ,
-                                       vgaccess:FunzionalitaUditiva ,
                                        vgaccess:Sottotitoli ;
                               vgaccess:piuSpecificoDi vgaccess:FunzionalitaUditivaCategoria ;
                               rdfs:comment "Individuo usato per mostrare la relazione transitiva piuSpecificoDi nella gerarchia delle funzionalita."@it ;
@@ -1186,12 +852,7 @@ vgaccess:SottotitoliCategoria rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#TheLastOfUsPartII
 vgaccess:TheLastOfUsPartII rdf:type owl:NamedIndividual ,
-                                    vgaccess:Videogioco ,
-                                    vgaccess:VideogiocoAccessibile ,
-                                    vgaccess:VideogiocoAccessibilePerUtentiMotori ,
-                                    vgaccess:VideogiocoAccessibilePerUtentiUditivi ,
-                                    vgaccess:VideogiocoAccessibilePerUtentiVisivi ,
-                                    vgaccess:VideogiocoAltamenteAccessibile ;
+                                    vgaccess:Videogioco ;
                            vgaccess:disponibileSu vgaccess:PlayStation4 ;
                            vgaccess:haFunzionalitaAccessibilita vgaccess:AltoContrastoTLOU2 ,
                                                                 vgaccess:AssistModeTLOU2 ,
@@ -1203,7 +864,7 @@ vgaccess:TheLastOfUsPartII rdf:type owl:NamedIndividual ,
                                                               vgaccess:PercezioneElementiVisivi ,
                                                               vgaccess:RiduzioneBarriereMotorie ;
                            vgaccess:sviluppatoDa vgaccess:NaughtyDog ;
-                           vgaccess:haAnnoPubblicazione "2020"^^xsd:gYear;
+                           vgaccess:haAnnoPubblicazione "2020"^^xsd:gYear ;
                            vgaccess:haDescrizioneBreve "Videogioco usato come esempio per rappresentare un insieme ampio di funzionalita di accessibilita."@it ;
                            vgaccess:haPunteggioAccessibilita 5 ;
                            vgaccess:haTitoloPrincipale "The Last of Us Part II" ;
@@ -1223,63 +884,6 @@ vgaccess:InterazioneGiocatore rdfs:comment "Concetto generale relativo alle moda
 vgaccess:RegolaDiGioco rdfs:comment "Concetto generale relativo ai vincoli e alle condizioni che regolano il funzionamento del gioco."@it ;
                        rdfs:label "Regola di gioco"@it ;
                        skos:closeMatch <https://gameontology.com/index.php/Rules> .
-
-
-#################################################################
-#    General axioms
-#################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( vgaccess:AltoContrasto
-                vgaccess:IngrandimentoTesto
-                vgaccess:ModalitaDaltonismo
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( vgaccess:AssistMode
-                vgaccess:ControlliSemplificati
-                vgaccess:RimappaturaComandi
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( vgaccess:DifficoltaPersonalizzabile
-                vgaccess:RiduzioneStimoli
-                vgaccess:TutorialGuidato
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( vgaccess:EsigenzaAccessibilita
-                vgaccess:FunzionalitaAccessibilita
-                vgaccess:LivelloAccessibilita
-                vgaccess:Piattaforma
-                vgaccess:ProfiloGiocatore
-                vgaccess:Videogioco
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( vgaccess:EsigenzaCognitiva
-                vgaccess:EsigenzaMotoria
-                vgaccess:EsigenzaUditiva
-                vgaccess:EsigenzaVisiva
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( vgaccess:FunzionalitaCognitiva
-                vgaccess:FunzionalitaMotoria
-                vgaccess:FunzionalitaUditiva
-                vgaccess:FunzionalitaVisiva
-              )
-] .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

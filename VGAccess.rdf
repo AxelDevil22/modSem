@@ -1083,26 +1083,7 @@
         <rdfs:label xml:lang="it">The Last of Us Part II</rdfs:label>
     </owl:NamedIndividual>
     
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#InterazioneGiocatore">
-        <rdfs:comment xml:lang="it">Concetto generale relativo alle modalita con cui il giocatore interagisce con il sistema di gioco.</rdfs:comment>
-        <rdfs:label xml:lang="it">Interazione del giocatore</rdfs:label>
-        <skos:closeMatch rdf:resource="https://gameontology.com/index.php/Interface"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#RegolaDiGioco">
-        <rdfs:comment xml:lang="it">Concetto generale relativo ai vincoli e alle condizioni che regolano il funzionamento del gioco.</rdfs:comment>
-        <rdfs:label xml:lang="it">Regola di gioco</rdfs:label>
-        <skos:closeMatch rdf:resource="https://gameontology.com/index.php/Rules"/>
-    </rdf:Description>
+    
 </rdf:RDF>
 
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VGAccess Client</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Semantic Web · Videogame Accessibility</p>
+      <h1>VGAccess Client</h1>
+      <p>
+        Esplora videogiochi, profili, esigenze e funzionalità di accessibilità
+        attraverso i collegamenti semantici definiti nell’ontologia VGAccess.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section id="role-section" class="role-grid" aria-label="Selezione profilo utente">
+      <button class="role-card" onclick="selectRole('player')">
+        <span class="role-icon">🎮</span>
+        <h2>Giocatore</h2>
+        <p>Trova videogiochi consigliati partendo da profili ed esigenze di accessibilità.</p>
+      </button>
+
+      <button class="role-card" onclick="selectRole('developer')">
+        <span class="role-icon">🛠️</span>
+        <h2>Sviluppatore</h2>
+        <p>Analizza quali funzionalità rendono un videogioco più accessibile e quali esigenze coprono.</p>
+      </button>
+
+      <button class="role-card" onclick="selectRole('researcher')">
+        <span class="role-icon">🔎</span>
+        <h2>Ricercatore</h2>
+        <p>Esplora il modello semantico, le proprietà di classificazione e gli allineamenti esterni.</p>
+      </button>
+    </section>
+
+    <section id="dashboard" class="dashboard hidden">
+      <div class="dashboard-header">
+        <button onclick="goHome()" class="back-btn">← Cambia profilo</button>
+        <h2 id="dashboard-title"></h2>
+        <p id="dashboard-description"></p>
+      </div>
+
+      <div id="controls" class="controls"></div>
+
+      <div id="loading" class="hidden">Caricamento risultati...</div>
+      <div id="results" class="results-grid"></div>
+
+      <details class="sparql-box">
+        <summary>Mostra query SPARQL</summary>
+        <pre id="query-preview"></pre>
+      </details>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

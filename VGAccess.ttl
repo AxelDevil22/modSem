@@ -1,5 +1,6 @@
 @prefix : <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -7,16 +8,16 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix terms: <http://purl.org/dc/terms/> .
 @prefix vgaccess: <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#> .
-@base <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess> .
+@base <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#> .
 
 <http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess> rdf:type owl:Ontology ;
                                                                       dc:creator "Alex Agliuzza"@it ;
                                                                       dc:date "2026-05-24"^^xsd:date ;
                                                                       dc:description "Ontologia per descrivere videogiochi in relazione alle funzionalita di accessibilita offerte, alle esigenze dei giocatori e ai profili utente supportati."@it ;
                                                                       dc:title "VGAccess: ontologia per la rappresentazione dell'accessibilita nei videogiochi"@it ;
-                                                                      dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                                                      terms:license <https://creativecommons.org/licenses/by/4.0/> ;
                                                                       vann:preferredNamespacePrefix "vgaccess" ;
                                                                       vann:preferredNamespaceUri "<http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#>" ;
                                                                       rdfs:comment "Ontologia sviluppata come progetto di modellazione concettuale per il Web Semantico."@it ;
@@ -43,7 +44,7 @@ dc:title rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:AnnotationProperty .
+terms:license rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -80,7 +81,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#adattoAProfilo
 vgaccess:adattoAProfilo rdf:type owl:ObjectProperty ;
-                        owl:inverseOf vgaccess:profiloAdattoA ;
                         rdfs:domain vgaccess:Videogioco ;
                         rdfs:range vgaccess:ProfiloGiocatore ;
                         rdfs:comment "Collega un videogioco a un profilo giocatore per cui il gioco puo essere considerato adatto."@it ;
@@ -92,13 +92,12 @@ vgaccess:classifica rdf:type owl:ObjectProperty ;
                     owl:inverseOf vgaccess:eClassificatoDa ;
                     rdfs:domain vgaccess:ConcettoDiClassificazione ;
                     rdfs:range vgaccess:Videogioco ;
-                    rdfs:comment "Collega un concetto di classificazione al videogioco che viene classificato da tale concetto."@it ;
-                    rdfs:label "classifica" .
+                    rdfs:comment "Relazione inversa di eClassificatoDa: collega un concetto di classificazione ai videogiochi che esso descrive o classifica"@it ;
+                    rdfs:label "classifica"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#disponibileSu
 vgaccess:disponibileSu rdf:type owl:ObjectProperty ;
-                       owl:inverseOf vgaccess:piattaformaDiVideogioco ;
                        rdfs:domain vgaccess:Videogioco ;
                        rdfs:range vgaccess:Piattaforma ;
                        rdfs:comment "Collega un videogioco alla piattaforma su cui e disponibile."@it ;
@@ -109,8 +108,8 @@ vgaccess:disponibileSu rdf:type owl:ObjectProperty ;
 vgaccess:eClassificatoDa rdf:type owl:ObjectProperty ;
                          rdfs:domain vgaccess:Videogioco ;
                          rdfs:range vgaccess:ConcettoDiClassificazione ;
-                         rdfs:comment "Collega un videogioco al concetto di classificazione che lo descrive."@it ;
-                         rdfs:label "eClassificatoDa" .
+                         rdfs:comment "Relazione che collega un videogioco a un concetto usato per descriverne o classificarne le caratteristiche di accessibilità"@it ;
+                         rdfs:label "eClassificatoDa"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#eFunzionalitaDi
@@ -120,33 +119,6 @@ vgaccess:eFunzionalitaDi rdf:type owl:ObjectProperty ;
                          rdfs:range vgaccess:Videogioco ;
                          rdfs:comment "Collega una funzionalita di accessibilita al videogioco in cui e presente."@it ;
                          rdfs:label "e funzionalita di"@it .
-
-
-###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#esigenzaDiProfilo
-vgaccess:esigenzaDiProfilo rdf:type owl:ObjectProperty ;
-                           owl:inverseOf vgaccess:haEsigenzaAccessibilita ;
-                           rdfs:domain vgaccess:EsigenzaAccessibilita ;
-                           rdfs:range vgaccess:ProfiloGiocatore ;
-                           rdfs:comment "Collega un'esigenza di accessibilita ai profili giocatore che presentano tale esigenza."@it ;
-                           rdfs:label "esigenza di profilo"@it .
-
-
-###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#esigenzaSupportataDaFunzionalita
-vgaccess:esigenzaSupportataDaFunzionalita rdf:type owl:ObjectProperty ;
-                                          owl:inverseOf vgaccess:supportaEsigenza ;
-                                          rdfs:domain vgaccess:EsigenzaAccessibilita ;
-                                          rdfs:range vgaccess:FunzionalitaAccessibilita ;
-                                          rdfs:comment "Collega un'esigenza di accessibilita alle funzionalita che la supportano."@it ;
-                                          rdfs:label "esigenza supportata da funzionalita"@it .
-
-
-###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#esigenzaSupportataDaVideogioco
-vgaccess:esigenzaSupportataDaVideogioco rdf:type owl:ObjectProperty ;
-                                        owl:inverseOf vgaccess:supportaEsigenzaGiocatore ;
-                                        rdfs:domain vgaccess:EsigenzaAccessibilita ;
-                                        rdfs:range vgaccess:Videogioco ;
-                                        rdfs:comment "Collega un'esigenza del giocatore ai videogiochi che la supportano."@it ;
-                                        rdfs:label "esigenza supportata da videogioco"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haEsigenzaAccessibilita
@@ -169,38 +141,11 @@ vgaccess:haFunzionalitaAccessibilita rdf:type owl:ObjectProperty ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#haLivelloAccessibilita
 vgaccess:haLivelloAccessibilita rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf vgaccess:eClassificatoDa ;
-                                owl:inverseOf vgaccess:livelloAccessibilitaDi ;
                                 rdf:type owl:FunctionalProperty ;
                                 rdfs:domain vgaccess:Videogioco ;
                                 rdfs:range vgaccess:LivelloAccessibilita ;
                                 rdfs:comment "Collega un videogioco a un unico livello sintetico di accessibilita."@it ;
                                 rdfs:label "ha livello di accessibilita"@it .
-
-
-###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#livelloAccessibilitaDi
-vgaccess:livelloAccessibilitaDi rdf:type owl:ObjectProperty ;
-                                rdfs:domain vgaccess:LivelloAccessibilita ;
-                                rdfs:range vgaccess:Videogioco ;
-                                rdfs:comment "Collega un livello sintetico di accessibilita ai videogiochi che hanno tale livello."@it ;
-                                rdfs:label "livello di accessibilita di"@it .
-
-
-###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#piattaformaDiVideogioco
-vgaccess:piattaformaDiVideogioco rdf:type owl:ObjectProperty ;
-                                 rdfs:domain vgaccess:Piattaforma ;
-                                 rdfs:range vgaccess:Videogioco ;
-                                 rdfs:comment "Collega una piattaforma ai videogiochi disponibili su di essa."@it ;
-                                 rdfs:label "piattaforma di videogioco"@it .
-
-
-###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#piuGeneraleDi
-vgaccess:piuGeneraleDi rdf:type owl:ObjectProperty ;
-                       owl:inverseOf vgaccess:piuSpecificoDi ;
-                       rdf:type owl:TransitiveProperty ;
-                       rdfs:domain vgaccess:FunzionalitaAccessibilita ;
-                       rdfs:range vgaccess:FunzionalitaAccessibilita ;
-                       rdfs:comment "Collega una funzionalita di accessibilita piu generale a una funzionalita piu specifica."@it ;
-                       rdfs:label "piu generale di"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#piuSpecificoDi
@@ -210,23 +155,6 @@ vgaccess:piuSpecificoDi rdf:type owl:ObjectProperty ,
                         rdfs:range vgaccess:FunzionalitaAccessibilita ;
                         rdfs:comment "Relazione transitiva usata per rappresentare gerarchie concettuali tra funzionalita o bisogni."@it ;
                         rdfs:label "piu specifico di"@it .
-
-
-###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#profiloAdattoA
-vgaccess:profiloAdattoA rdf:type owl:ObjectProperty ;
-                        rdfs:domain vgaccess:ProfiloGiocatore ;
-                        rdfs:range vgaccess:Videogioco ;
-                        rdfs:comment "Collega un profilo giocatore ai videogiochi adatti a quel profilo."@it ;
-                        rdfs:label "profilo adatto a"@it .
-
-
-###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#pubblicaVideogioco
-vgaccess:pubblicaVideogioco rdf:type owl:ObjectProperty ;
-                            owl:inverseOf vgaccess:pubblicatoDa ;
-                            rdfs:domain vgaccess:Publisher ;
-                            rdfs:range vgaccess:Videogioco ;
-                            rdfs:comment "Collega un publisher ai videogiochi che ha pubblicato."@it ;
-                            rdfs:label "pubblica videogioco"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#pubblicatoDa
@@ -255,15 +183,6 @@ vgaccess:supportaEsigenzaGiocatore rdf:type owl:ObjectProperty ;
                                                           ) ;
                                    rdfs:comment "Collega un videogioco a un'esigenza del giocatore inferita tramite le sue funzionalita di accessibilita."@it ;
                                    rdfs:label "supporta esigenza del giocatore"@it .
-
-
-###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#sviluppaVideogioco
-vgaccess:sviluppaVideogioco rdf:type owl:ObjectProperty ;
-                            owl:inverseOf vgaccess:sviluppatoDa ;
-                            rdfs:domain vgaccess:Sviluppatore ;
-                            rdfs:range vgaccess:Videogioco ;
-                            rdfs:comment "Collega uno sviluppatore ai videogiochi che ha sviluppato."@it ;
-                            rdfs:label "sviluppa videogioco"@it .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#sviluppatoDa
@@ -351,14 +270,8 @@ vgaccess:DifficoltaPersonalizzabile rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita
 vgaccess:EsigenzaAccessibilita rdf:type owl:Class ;
-                               rdfs:subClassOf vgaccess:ConcettoDiClassificazione ;
                                owl:disjointWith vgaccess:FunzionalitaAccessibilita ,
-                                                vgaccess:LivelloAccessibilita ,
-                                                vgaccess:Piattaforma ,
-                                                vgaccess:ProfiloGiocatore ,
-                                                vgaccess:Publisher ,
-                                                vgaccess:Sviluppatore ,
-                                                vgaccess:Videogioco ;
+                                                vgaccess:LivelloAccessibilita ;
                                rdfs:comment "Necessita o requisito del giocatore a cui una funzionalita di accessibilita puo rispondere."@it ;
                                rdfs:label "Esigenza di accessibilita"@it .
 
@@ -394,12 +307,7 @@ vgaccess:EsigenzaVisiva rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita
 vgaccess:FunzionalitaAccessibilita rdf:type owl:Class ;
                                    rdfs:subClassOf vgaccess:ConcettoDiClassificazione ;
-                                   owl:disjointWith vgaccess:LivelloAccessibilita ,
-                                                    vgaccess:Piattaforma ,
-                                                    vgaccess:ProfiloGiocatore ,
-                                                    vgaccess:Publisher ,
-                                                    vgaccess:Sviluppatore ,
-                                                    vgaccess:Videogioco ;
+                                   owl:disjointWith vgaccess:LivelloAccessibilita ;
                                    rdfs:comment "Caratteristica o opzione progettata per ridurre barriere di accesso e migliorare la fruizione del videogioco."@it ;
                                    rdfs:label "Funzionalita di accessibilita"@it .
 
@@ -455,11 +363,6 @@ vgaccess:LivelloAccessibilita rdf:type owl:Class ;
                                                               )
                                                   ] ;
                               rdfs:subClassOf vgaccess:ConcettoDiClassificazione ;
-                              owl:disjointWith vgaccess:Piattaforma ,
-                                               vgaccess:ProfiloGiocatore ,
-                                               vgaccess:Publisher ,
-                                               vgaccess:Sviluppatore ,
-                                               vgaccess:Videogioco ;
                               rdfs:comment "Classe enumerata che rappresenta tre livelli sintetici di accessibilita."@it ;
                               rdfs:label "Livello di accessibilita"@it .
 
@@ -474,8 +377,6 @@ vgaccess:ModalitaDaltonismo rdf:type owl:Class ;
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma
 vgaccess:Piattaforma rdf:type owl:Class ;
                      owl:disjointWith vgaccess:ProfiloGiocatore ,
-                                      vgaccess:Publisher ,
-                                      vgaccess:Sviluppatore ,
                                       vgaccess:Videogioco ;
                      rdfs:comment "Sistema hardware o software su cui un videogioco e disponibile."@it ;
                      rdfs:label "Piattaforma"@it ;
@@ -484,9 +385,7 @@ vgaccess:Piattaforma rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore
 vgaccess:ProfiloGiocatore rdf:type owl:Class ;
-                          owl:disjointWith vgaccess:Publisher ,
-                                           vgaccess:Sviluppatore ,
-                                           vgaccess:Videogioco ;
+                          owl:disjointWith vgaccess:Videogioco ;
                           rdfs:comment "Rappresentazione astratta di un giocatore o gruppo di giocatori con specifiche esigenze di accessibilita."@it ;
                           rdfs:label "Profilo giocatore"@it .
 
@@ -546,7 +445,7 @@ vgaccess:TutorialGuidato rdf:type owl:Class ;
 vgaccess:Videogioco rdf:type owl:Class ;
                     rdfs:comment "Opera videoludica descritta dal punto di vista delle sue funzionalita di accessibilita e delle informazioni descrittive principali."@it ;
                     rdfs:label "Videogioco"@it ;
-                    skos:exactMatch <http://dbpedia.org/ontology/VideoGame> .
+                    skos:exactMatch dbo:VideoGame .
 
 
 ###  http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#VideogiocoAccessibile
@@ -870,20 +769,6 @@ vgaccess:TheLastOfUsPartII rdf:type owl:NamedIndividual ,
                            vgaccess:haTitoloPrincipale "The Last of Us Part II" ;
                            rdfs:comment "Esempio completo di videogioco con piu funzionalita di accessibilita visiva, uditiva e motoria."@it ;
                            rdfs:label "The Last of Us Part II"@it .
-
-
-#################################################################
-#    Annotations
-#################################################################
-
-vgaccess:InterazioneGiocatore rdfs:comment "Concetto generale relativo alle modalita con cui il giocatore interagisce con il sistema di gioco."@it ;
-                              rdfs:label "Interazione del giocatore"@it ;
-                              skos:closeMatch <https://gameontology.com/index.php/Interface> .
-
-
-vgaccess:RegolaDiGioco rdfs:comment "Concetto generale relativo ai vincoli e alle condizioni che regolano il funzionamento del gioco."@it ;
-                       rdfs:label "Regola di gioco"@it ;
-                       skos:closeMatch <https://gameontology.com/index.php/Rules> .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

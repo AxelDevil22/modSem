@@ -142,7 +142,8 @@
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#eClassificatoDa"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ConcettoDiClassificazione"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
-        <rdfs:label>classifica</rdfs:label>
+        <rdfs:comment xml:lang="it">Relazione inversa di eClassificatoDa: collega un concetto di classificazione ai videogiochi che esso descrive o classifica</rdfs:comment>
+        <rdfs:label xml:lang="it">classifica</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -163,7 +164,8 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#eClassificatoDa">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ConcettoDiClassificazione"/>
-        <rdfs:label>eClassificatoDa</rdfs:label>
+        <rdfs:comment xml:lang="it">Relazione che collega un videogioco a un concetto usato per descriverne o classificarne le caratteristiche di accessibilità</rdfs:comment>
+        <rdfs:label xml:lang="it">eClassificatoDa</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -396,7 +398,8 @@
     <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#EsigenzaAccessibilita">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ConcettoDiClassificazione"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
         <rdfs:comment xml:lang="it">Necessita o requisito del giocatore a cui una funzionalita di accessibilita puo rispondere.</rdfs:comment>
         <rdfs:label xml:lang="it">Esigenza di accessibilita</rdfs:label>
     </owl:Class>
@@ -447,6 +450,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#FunzionalitaAccessibilita">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ConcettoDiClassificazione"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#LivelloAccessibilita"/>
         <rdfs:comment xml:lang="it">Caratteristica o opzione progettata per ridurre barriere di accesso e migliorare la fruizione del videogioco.</rdfs:comment>
         <rdfs:label xml:lang="it">Funzionalita di accessibilita</rdfs:label>
     </owl:Class>
@@ -545,6 +549,8 @@
     <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Piattaforma">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
         <rdfs:comment xml:lang="it">Sistema hardware o software su cui un videogioco e disponibile.</rdfs:comment>
         <rdfs:label xml:lang="it">Piattaforma</rdfs:label>
         <skos:closeMatch rdf:resource="http://www.wikidata.org/entity/Q241317"/>
@@ -555,6 +561,7 @@
     <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#ProfiloGiocatore">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
         <rdfs:comment xml:lang="it">Rappresentazione astratta di un giocatore o gruppo di giocatori con specifiche esigenze di accessibilita.</rdfs:comment>
         <rdfs:label xml:lang="it">Profilo giocatore</rdfs:label>
     </owl:Class>
@@ -564,6 +571,7 @@
     <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Publisher -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Publisher">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
         <rdfs:comment xml:lang="it">Soggetto o organizzazione responsabile della pubblicazione o distribuzione commerciale di un videogioco.</rdfs:comment>
         <rdfs:label xml:lang="it">Publisher</rdfs:label>
         <skos:exactMatch rdf:resource="http://www.wikidata.org/entity/Q1137109"/>
@@ -614,6 +622,7 @@
     <!-- http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sviluppatore -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Sviluppatore">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alexagliuzza/ontologies/2026/4/VGAccess#Videogioco"/>
         <rdfs:comment xml:lang="it">Soggetto o organizzazione responsabile dello sviluppo di un videogioco.</rdfs:comment>
         <rdfs:label xml:lang="it">Sviluppatore</rdfs:label>
         <skos:exactMatch rdf:resource="http://www.wikidata.org/entity/Q210167"/>
@@ -1082,8 +1091,6 @@
         <rdfs:comment xml:lang="it">Esempio completo di videogioco con piu funzionalita di accessibilita visiva, uditiva e motoria.</rdfs:comment>
         <rdfs:label xml:lang="it">The Last of Us Part II</rdfs:label>
     </owl:NamedIndividual>
-    
-    
 </rdf:RDF>
 
 
